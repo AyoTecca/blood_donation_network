@@ -967,3 +967,81 @@ body:has(.auth-landing),
   background-color: #f3f4f6;
   color: #374151;
 }
+/* --- Сетка дашборда --- */
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.dashboard-card {
+  background: white;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  border: 1px solid #eaeaea;
+}
+
+.dashboard-card h3 {
+  margin-top: 0;
+  border-bottom: 2px solid #f0f0f0;
+  padding-bottom: 10px;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+/* --- Списки статистики (Requests) --- */
+.stats-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.stat-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 12px;
+  background: #f8f9fa;
+  border-radius: 6px;
+  border-left: 4px solid #0d6efd; /* Синяя полоска сбоку */
+}
+
+.stat-item span {
+  font-weight: 500;
+  color: #555;
+}
+
+.stat-item strong {
+  font-size: 1.1em;
+  color: #000;
+}
+
+/* --- Таблица (Inventory) --- */
+.stats-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.stats-table th, 
+.stats-table td {
+  padding: 12px 10px;
+  text-align: left;
+  border-bottom: 1px solid #eee;
+}
+
+/* --- Полоска прогресса (Progress Bar) --- */
+.progress-bar-bg {
+  background: #e9ecef;
+  border-radius: 10px;
+  height: 8px;
+  width: 100%;
+  overflow: hidden;
+}
+
+.progress-bar-fill {
+  background: #198754; 
+  height: 100%;
+  border-radius: 10px;
+  transition: width 0.4s ease-in-out;
+}

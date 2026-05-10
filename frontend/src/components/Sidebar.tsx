@@ -1,4 +1,4 @@
-import { NavLink } from "react-router-dom";
+import {  NavLink } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
 
 export function Sidebar() {
@@ -16,6 +16,9 @@ export function Sidebar() {
         </NavLink>
         <NavLink to="/requests" className={({ isActive }) => (isActive ? "nav-link active" : "nav-link")}>
           Requests
+        </NavLink>
+        <NavLink to="/dashboard" className={({ isActive }) => (isActive ? "nav-link active" : "nav-link")}>
+          Dashboard
         </NavLink>
         {user?.role === "admin" && (
           <NavLink
