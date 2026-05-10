@@ -885,3 +885,85 @@ body:has(.auth-landing),
     display: none;
   }
 }
+
+/* Urgency Badges */
+.urgency-badge {
+  padding: 3px 8px;
+  border-radius: 12px;
+  font-size: 0.85em;
+  display: inline-block;
+}
+
+.urgency-critical {
+  background-color: #fee2e2;
+  color: #991b1b;
+}
+
+.urgency-normal {
+  background-color: #f3f4f6;
+  color: #374151;
+}
+
+/* --- Requests Page Styles --- */
+
+.message-box {
+  padding: 10px;
+  margin-bottom: 20px;
+  background-color: #e2e8f0;
+  border-radius: 5px;
+}
+
+.actions-bar {
+  margin-bottom: 20px;
+}
+
+.btn-oracle-match {
+  background-color: #8b0000;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.btn-oracle-match:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.requests-table {
+  width: 100%;
+  text-align: left;
+  border-collapse: collapse;
+}
+
+.requests-table thead tr {
+  border-bottom: 2px solid #ddd;
+}
+
+.requests-table tbody tr {
+  border-bottom: 1px solid #eee;
+  line-height: 2.5;
+}
+
+.text-center {
+  text-align: center;
+}
+
+/* Urgency Badges */
+.urgency-badge {
+  padding: 3px 8px;
+  border-radius: 12px;
+  font-size: 0.85em;
+  display: inline-block;
+}
+
+.urgency-critical {
+  background-color: #fee2e2;
+  color: #991b1b;
+}
+
+.urgency-normal {
+  background-color: #f3f4f6;
+  color: #374151;
+}

@@ -6,6 +6,7 @@ import { AuthPage } from "./pages/AuthPage";
 import { HomePage } from "./pages/HomePage";
 import { RequireAdmin } from "./routes/RequireAdmin";
 import { RequireAuth } from "./routes/RequireAuth";
+import { RequestsPage } from "./pages/RequestsPage";
 
 export default function App() {
   return (
@@ -23,6 +24,10 @@ export default function App() {
                     <AdminPage />
                   </RequireAdmin>
                 }
+              />
+              <Route
+                path="requests"
+                element={<RequestsPage />}
               />
             </Route>
           </Route>
