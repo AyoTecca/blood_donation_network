@@ -1,0 +1,13 @@
+# Project secrets live in ../.env (gitignored at repo root)
+.env
+
+.venv/
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+*.egg-info/
+.coverage
+htmlcov/

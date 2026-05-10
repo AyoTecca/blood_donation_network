@@ -1,0 +1,1001 @@
+unit_id,donation_id,component_type,expiry_date,status,current_facility_id
+1,998,Whole Blood,2026-04-06,Reserved,32
+2,86,Whole Blood,2026-03-05,Available,12
+3,514,Platelets,2026-04-28,Transfused,13
+4,849,Whole Blood,2026-12-26,Transfused,20
+5,390,Platelets,2026-08-27,Transfused,35
+6,630,Plasma,2026-07-09,Transfused,41
+7,533,Platelets,2026-05-15,Available,10
+8,71,Plasma,2026-05-08,Transfused,10
+9,687,Platelets,2026-06-25,Reserved,41
+10,890,Whole Blood,2027-01-30,Expired,13
+11,295,Platelets,2026-08-31,Available,36
+12,176,Whole Blood,2026-11-09,Transfused,48
+13,199,Whole Blood,2026-09-16,Expired,27
+14,292,Whole Blood,2026-10-17,Available,21
+15,956,Platelets,2026-05-02,Available,44
+16,758,Plasma,2026-03-18,Reserved,44
+17,732,Whole Blood,2026-10-04,Available,44
+18,106,Plasma,2026-08-29,Available,40
+19,767,Platelets,2026-11-20,Available,30
+20,777,Plasma,2027-01-09,Transfused,27
+21,801,Platelets,2026-07-20,Available,8
+22,493,Plasma,2026-08-14,Discarded,35
+23,252,Plasma,2026-11-19,Transfused,21
+24,279,Whole Blood,2026-06-27,Transfused,50
+25,916,Platelets,2026-07-20,Transfused,27
+26,88,Platelets,2026-08-01,Discarded,30
+27,31,Platelets,2026-11-01,Transfused,40
+28,361,Platelets,2027-02-24,Discarded,30
+29,996,Plasma,2026-10-13,Transfused,3
+30,756,Whole Blood,2026-05-16,Available,11
+31,362,Whole Blood,2026-12-31,Transfused,5
+32,118,Platelets,2027-01-31,Available,46
+33,939,Plasma,2026-08-29,Discarded,35
+34,339,Platelets,2026-11-23,Available,10
+35,582,Whole Blood,2026-04-14,Available,24
+36,689,Platelets,2026-04-29,Transfused,34
+37,765,Platelets,2026-03-27,Transfused,1
+38,242,Plasma,2026-09-27,Available,7
+39,559,Whole Blood,2026-12-20,Transfused,32
+40,42,Platelets,2026-04-12,Available,10
+41,806,Plasma,2026-11-07,Transfused,16
+42,466,Platelets,2026-07-01,Expired,8
+43,310,Plasma,2026-08-06,Transfused,7
+44,299,Whole Blood,2026-05-14,Available,35
+45,467,Whole Blood,2026-05-15,Available,5
+46,628,Whole Blood,2026-05-08,Available,8
+47,179,Platelets,2026-10-02,Available,30
+48,808,Whole Blood,2027-01-09,Transfused,24
+49,86,Whole Blood,2026-04-02,Transfused,49
+50,92,Platelets,2026-10-24,Reserved,26
+51,333,Plasma,2026-07-13,Available,22
+52,161,Whole Blood,2026-03-04,Available,17
+53,113,Plasma,2026-06-15,Available,50
+54,60,Platelets,2026-07-23,Transfused,4
+55,361,Plasma,2026-07-02,Discarded,10
+56,293,Whole Blood,2026-06-12,Available,24
+57,572,Whole Blood,2026-10-20,Transfused,50
+58,271,Platelets,2027-02-04,Transfused,24
+59,907,Platelets,2026-12-04,Available,29
+60,225,Plasma,2026-06-01,Available,10
+61,204,Plasma,2026-08-26,Expired,24
+62,906,Whole Blood,2026-11-11,Available,3
+63,621,Whole Blood,2026-04-04,Transfused,42
+64,826,Platelets,2026-08-23,Transfused,3
+65,126,Whole Blood,2026-10-30,Transfused,10
+66,832,Platelets,2026-12-29,Transfused,13
+67,270,Plasma,2027-01-12,Available,50
+68,489,Plasma,2026-10-11,Transfused,34
+69,978,Whole Blood,2026-06-05,Expired,25
+70,437,Plasma,2026-08-29,Expired,12
+71,6,Whole Blood,2026-07-06,Available,45
+72,484,Plasma,2026-07-30,Transfused,16
+73,637,Platelets,2027-01-16,Transfused,4
+74,352,Platelets,2026-03-30,Available,42
+75,879,Plasma,2027-01-01,Transfused,35
+76,654,Whole Blood,2026-04-26,Available,27
+77,684,Plasma,2026-04-18,Discarded,19
+78,845,Plasma,2027-02-24,Transfused,13
+79,553,Plasma,2026-06-30,Transfused,5
+80,957,Plasma,2026-04-18,Transfused,46
+81,883,Platelets,2026-11-04,Transfused,49
+82,797,Whole Blood,2026-07-06,Discarded,36
+83,295,Whole Blood,2026-03-28,Available,11
+84,902,Platelets,2026-03-19,Transfused,32
+85,773,Whole Blood,2026-09-25,Available,1
+86,151,Platelets,2027-01-06,Transfused,1
+87,778,Platelets,2026-11-13,Discarded,44
+88,940,Whole Blood,2026-04-10,Expired,25
+89,583,Plasma,2027-02-21,Transfused,15
+90,993,Plasma,2026-09-29,Transfused,12
+91,914,Whole Blood,2026-12-16,Available,21
+92,521,Plasma,2026-10-07,Transfused,32
+93,426,Whole Blood,2027-01-17,Transfused,28
+94,829,Platelets,2026-10-17,Available,37
+95,307,Whole Blood,2026-09-27,Available,13
+96,882,Plasma,2026-12-23,Available,38
+97,800,Plasma,2027-01-20,Transfused,47
+98,613,Whole Blood,2026-07-19,Available,21
+99,687,Platelets,2026-09-22,Transfused,5
+100,114,Plasma,2027-01-17,Transfused,43
+101,990,Plasma,2026-10-30,Transfused,46
+102,306,Platelets,2026-06-18,Available,22
+103,814,Plasma,2026-08-30,Available,15
+104,891,Whole Blood,2026-03-07,Available,3
+105,300,Platelets,2026-10-03,Transfused,33
+106,342,Platelets,2026-09-13,Transfused,15
+107,379,Plasma,2026-03-06,Available,4
+108,471,Whole Blood,2026-11-14,Available,25
+109,641,Plasma,2026-10-12,Transfused,7
+110,540,Plasma,2026-10-05,Transfused,33
+111,36,Plasma,2026-05-30,Available,9
+112,1000,Platelets,2026-10-17,Reserved,11
+113,290,Plasma,2026-03-09,Transfused,30
+114,169,Plasma,2026-06-30,Expired,16
+115,508,Platelets,2026-03-12,Expired,36
+116,531,Plasma,2026-05-27,Available,19
+117,174,Platelets,2026-09-17,Expired,41
+118,889,Plasma,2026-07-11,Transfused,27
+119,335,Plasma,2027-01-30,Reserved,24
+120,729,Whole Blood,2026-09-10,Transfused,34
+121,985,Whole Blood,2026-12-26,Available,32
+122,47,Whole Blood,2026-04-13,Transfused,23
+123,273,Plasma,2027-01-10,Available,48
+124,19,Whole Blood,2026-04-29,Transfused,3
+125,183,Platelets,2026-04-30,Transfused,26
+126,424,Platelets,2026-02-28,Reserved,39
+127,643,Whole Blood,2026-05-06,Available,9
+128,614,Platelets,2026-10-10,Transfused,8
+129,321,Plasma,2026-04-14,Reserved,42
+130,532,Whole Blood,2027-02-19,Available,39
+131,969,Whole Blood,2026-12-08,Discarded,42
+132,816,Whole Blood,2027-01-16,Available,41
+133,686,Plasma,2026-10-05,Reserved,46
+134,161,Plasma,2026-03-09,Available,46
+135,577,Plasma,2026-03-20,Reserved,13
+136,999,Platelets,2026-03-01,Transfused,28
+137,685,Whole Blood,2026-04-19,Available,17
+138,566,Whole Blood,2026-12-01,Discarded,35
+139,210,Plasma,2026-07-02,Transfused,21
+140,88,Whole Blood,2026-12-30,Reserved,23
+141,331,Platelets,2026-06-11,Reserved,46
+142,276,Plasma,2026-03-11,Available,33
+143,52,Whole Blood,2026-12-31,Transfused,21
+144,616,Platelets,2026-06-14,Transfused,23
+145,102,Platelets,2026-06-17,Transfused,13
+146,446,Platelets,2026-07-23,Available,20
+147,110,Whole Blood,2026-08-09,Transfused,13
+148,370,Plasma,2026-11-12,Transfused,40
+149,692,Plasma,2026-08-18,Discarded,41
+150,855,Whole Blood,2026-06-05,Discarded,7
+151,37,Platelets,2026-12-20,Discarded,50
+152,560,Whole Blood,2026-12-14,Available,7
+153,393,Whole Blood,2027-02-07,Transfused,31
+154,506,Platelets,2027-02-04,Available,10
+155,97,Whole Blood,2026-05-18,Transfused,21
+156,514,Plasma,2026-10-29,Reserved,40
+157,367,Plasma,2027-02-17,Available,14
+158,802,Whole Blood,2026-10-26,Transfused,43
+159,807,Whole Blood,2026-10-19,Available,45
+160,810,Platelets,2026-12-22,Transfused,10
+161,400,Plasma,2026-07-18,Transfused,36
+162,576,Whole Blood,2026-12-04,Discarded,47
+163,561,Whole Blood,2026-07-09,Available,20
+164,298,Whole Blood,2027-01-14,Transfused,32
+165,105,Platelets,2026-05-08,Available,6
+166,615,Whole Blood,2026-08-26,Available,2
+167,583,Platelets,2026-11-19,Transfused,3
+168,977,Plasma,2026-03-02,Available,33
+169,616,Platelets,2026-11-02,Available,12
+170,226,Plasma,2026-08-22,Available,49
+171,220,Whole Blood,2026-10-17,Available,47
+172,887,Plasma,2027-01-09,Transfused,27
+173,956,Platelets,2026-03-09,Reserved,20
+174,667,Plasma,2026-08-23,Available,25
+175,111,Whole Blood,2026-07-31,Transfused,7
+176,247,Plasma,2027-01-11,Available,22
+177,427,Platelets,2026-11-17,Available,35
+178,607,Platelets,2027-02-13,Transfused,7
+179,247,Plasma,2026-08-29,Transfused,10
+180,97,Plasma,2026-05-31,Available,40
+181,646,Platelets,2026-07-21,Reserved,24
+182,824,Platelets,2026-09-25,Transfused,27
+183,60,Whole Blood,2026-04-01,Transfused,39
+184,470,Platelets,2026-04-01,Transfused,23
+185,776,Whole Blood,2026-11-25,Available,22
+186,305,Whole Blood,2026-11-07,Available,47
+187,833,Platelets,2026-09-02,Available,44
+188,922,Plasma,2026-04-11,Transfused,13
+189,53,Plasma,2026-09-24,Available,6
+190,240,Plasma,2026-05-26,Available,19
+191,551,Platelets,2026-03-09,Transfused,50
+192,240,Whole Blood,2026-06-03,Available,35
+193,543,Whole Blood,2027-01-17,Discarded,27
+194,374,Whole Blood,2026-10-08,Available,49
+195,280,Plasma,2026-09-04,Available,3
+196,412,Whole Blood,2026-05-09,Available,45
+197,437,Platelets,2027-02-20,Reserved,35
+198,459,Plasma,2026-04-26,Reserved,4
+199,65,Whole Blood,2026-06-02,Available,36
+200,193,Platelets,2026-04-21,Expired,13
+201,591,Platelets,2026-10-25,Available,36
+202,960,Plasma,2026-12-24,Available,30
+203,703,Platelets,2026-06-18,Available,38
+204,979,Whole Blood,2026-03-25,Transfused,12
+205,363,Platelets,2026-03-14,Transfused,4
+206,651,Whole Blood,2026-06-22,Expired,50
+207,889,Whole Blood,2026-09-19,Available,8
+208,469,Plasma,2026-07-23,Transfused,34
+209,202,Plasma,2026-06-24,Reserved,16
+210,144,Platelets,2027-02-08,Transfused,29
+211,37,Plasma,2026-05-08,Transfused,48
+212,350,Plasma,2026-04-25,Reserved,3
+213,34,Whole Blood,2026-06-19,Transfused,24
+214,248,Plasma,2026-03-01,Available,2
+215,320,Whole Blood,2026-08-20,Available,47
+216,70,Plasma,2027-02-24,Discarded,29
+217,945,Plasma,2026-06-29,Expired,13
+218,586,Platelets,2026-11-28,Transfused,6
+219,330,Whole Blood,2027-01-12,Available,42
+220,325,Plasma,2027-01-05,Discarded,3
+221,714,Platelets,2026-03-27,Transfused,18
+222,160,Platelets,2026-11-13,Available,32
+223,394,Plasma,2026-03-13,Available,11
+224,543,Plasma,2026-03-17,Reserved,18
+225,274,Platelets,2026-05-24,Available,19
+226,325,Platelets,2026-09-11,Transfused,22
+227,933,Whole Blood,2026-04-15,Transfused,42
+228,738,Plasma,2026-08-20,Available,27
+229,694,Plasma,2026-11-06,Reserved,36
+230,739,Plasma,2026-07-12,Expired,34
+231,534,Whole Blood,2026-12-08,Transfused,23
+232,526,Platelets,2026-08-16,Transfused,5
+233,118,Platelets,2027-01-31,Transfused,17
+234,311,Plasma,2026-08-03,Available,10
+235,475,Platelets,2026-12-12,Reserved,48
+236,84,Whole Blood,2026-03-08,Available,42
+237,662,Whole Blood,2027-01-17,Available,29
+238,345,Platelets,2026-03-26,Transfused,12
+239,261,Whole Blood,2026-10-28,Reserved,32
+240,910,Plasma,2027-02-05,Transfused,20
+241,121,Whole Blood,2026-09-03,Reserved,31
+242,525,Whole Blood,2026-08-26,Available,48
+243,37,Plasma,2026-07-30,Transfused,49
+244,550,Whole Blood,2026-10-28,Transfused,10
+245,997,Platelets,2026-04-18,Reserved,17
+246,366,Whole Blood,2026-08-29,Reserved,8
+247,364,Platelets,2026-12-14,Transfused,20
+248,676,Plasma,2026-12-03,Available,24
+249,914,Whole Blood,2026-03-26,Transfused,2
+250,178,Plasma,2026-08-25,Discarded,49
+251,322,Plasma,2026-09-28,Transfused,38
+252,531,Whole Blood,2026-11-27,Available,38
+253,487,Plasma,2026-07-09,Transfused,1
+254,339,Platelets,2026-03-22,Transfused,38
+255,887,Whole Blood,2026-09-10,Available,20
+256,56,Whole Blood,2026-09-21,Available,44
+257,477,Whole Blood,2026-12-08,Available,5
+258,934,Plasma,2026-03-06,Transfused,47
+259,75,Whole Blood,2027-01-03,Transfused,14
+260,747,Platelets,2026-08-14,Available,40
+261,476,Platelets,2026-10-24,Expired,22
+262,342,Platelets,2027-02-24,Available,15
+263,77,Platelets,2026-05-15,Transfused,48
+264,416,Plasma,2026-08-29,Transfused,20
+265,391,Whole Blood,2026-05-04,Available,7
+266,666,Plasma,2027-01-03,Transfused,46
+267,156,Plasma,2026-07-04,Available,49
+268,136,Plasma,2027-02-09,Available,46
+269,403,Platelets,2026-11-05,Expired,16
+270,528,Plasma,2026-12-06,Expired,28
+271,940,Plasma,2026-03-16,Available,45
+272,183,Platelets,2026-10-13,Transfused,13
+273,982,Plasma,2026-07-28,Transfused,37
+274,279,Platelets,2026-05-30,Available,18
+275,120,Platelets,2026-12-23,Available,16
+276,428,Plasma,2026-08-26,Available,48
+277,182,Platelets,2026-11-03,Transfused,19
+278,166,Platelets,2026-08-28,Available,32
+279,494,Whole Blood,2026-05-19,Expired,42
+280,444,Plasma,2026-07-06,Discarded,26
+281,100,Platelets,2026-11-13,Transfused,9
+282,514,Plasma,2026-09-09,Transfused,46
+283,418,Whole Blood,2026-03-11,Available,39
+284,333,Whole Blood,2026-10-10,Expired,3
+285,851,Plasma,2026-06-13,Expired,24
+286,196,Whole Blood,2026-08-16,Transfused,47
+287,336,Platelets,2026-11-25,Reserved,38
+288,517,Whole Blood,2026-03-16,Expired,44
+289,756,Plasma,2026-10-25,Expired,33
+290,929,Plasma,2026-06-05,Available,44
+291,677,Platelets,2026-04-08,Available,35
+292,580,Whole Blood,2026-07-16,Discarded,30
+293,696,Platelets,2026-08-02,Transfused,49
+294,848,Whole Blood,2026-07-31,Transfused,22
+295,804,Plasma,2026-04-26,Transfused,41
+296,652,Plasma,2026-04-13,Available,50
+297,886,Plasma,2026-10-09,Available,25
+298,453,Whole Blood,2026-08-06,Discarded,9
+299,776,Whole Blood,2026-11-20,Transfused,12
+300,886,Whole Blood,2026-04-28,Available,21
+301,981,Whole Blood,2026-06-05,Available,25
+302,608,Plasma,2026-06-09,Available,24
+303,358,Plasma,2026-03-14,Available,9
+304,477,Plasma,2026-10-25,Transfused,14
+305,908,Plasma,2026-08-25,Available,31
+306,1000,Platelets,2026-08-11,Available,34
+307,887,Plasma,2026-10-18,Available,44
+308,777,Platelets,2026-03-17,Transfused,9
+309,155,Platelets,2026-12-07,Transfused,24
+310,958,Plasma,2026-12-03,Transfused,13
+311,21,Plasma,2027-01-11,Reserved,8
+312,332,Platelets,2026-07-25,Transfused,30
+313,632,Platelets,2026-07-19,Transfused,28
+314,223,Whole Blood,2026-12-13,Available,46
+315,291,Whole Blood,2026-10-09,Expired,16
+316,373,Plasma,2026-05-28,Expired,27
+317,102,Platelets,2026-03-29,Expired,30
+318,771,Plasma,2026-06-17,Transfused,16
+319,985,Plasma,2026-08-01,Reserved,25
+320,467,Platelets,2026-05-30,Transfused,38
+321,175,Whole Blood,2026-04-12,Transfused,47
+322,135,Plasma,2026-06-04,Available,24
+323,936,Whole Blood,2026-03-12,Transfused,3
+324,739,Plasma,2026-03-10,Transfused,34
+325,559,Whole Blood,2026-09-06,Available,7
+326,66,Platelets,2026-03-14,Transfused,20
+327,104,Plasma,2026-03-30,Reserved,44
+328,958,Platelets,2026-03-30,Transfused,5
+329,636,Platelets,2026-12-26,Transfused,37
+330,14,Plasma,2027-01-17,Expired,10
+331,782,Platelets,2026-09-23,Transfused,5
+332,391,Whole Blood,2026-06-30,Available,49
+333,386,Whole Blood,2026-08-21,Expired,48
+334,509,Whole Blood,2026-09-06,Transfused,2
+335,489,Platelets,2027-02-07,Transfused,36
+336,675,Plasma,2026-11-29,Transfused,44
+337,167,Whole Blood,2026-08-29,Expired,20
+338,389,Plasma,2026-10-20,Transfused,45
+339,246,Platelets,2026-04-03,Transfused,7
+340,902,Platelets,2026-07-26,Available,47
+341,163,Whole Blood,2026-09-18,Available,34
+342,525,Platelets,2026-04-23,Discarded,31
+343,9,Plasma,2026-07-25,Available,12
+344,575,Whole Blood,2026-06-03,Transfused,43
+345,62,Plasma,2026-07-31,Available,26
+346,401,Whole Blood,2026-06-01,Transfused,13
+347,433,Whole Blood,2026-07-13,Reserved,13
+348,236,Platelets,2026-12-13,Available,37
+349,241,Whole Blood,2026-04-10,Transfused,15
+350,251,Platelets,2026-08-02,Transfused,11
+351,959,Platelets,2026-11-05,Available,32
+352,565,Platelets,2026-03-20,Available,10
+353,92,Whole Blood,2026-09-17,Available,26
+354,210,Platelets,2026-07-04,Available,38
+355,423,Platelets,2027-02-16,Available,20
+356,717,Platelets,2026-10-18,Transfused,16
+357,415,Plasma,2026-10-21,Available,49
+358,313,Whole Blood,2026-06-15,Transfused,15
+359,958,Platelets,2026-06-07,Available,3
+360,586,Whole Blood,2026-04-08,Available,20
+361,100,Plasma,2026-07-05,Transfused,31
+362,633,Platelets,2026-03-30,Transfused,3
+363,709,Plasma,2026-06-15,Available,48
+364,377,Plasma,2026-02-27,Available,4
+365,56,Plasma,2026-10-16,Available,8
+366,339,Plasma,2026-09-23,Transfused,17
+367,459,Platelets,2027-01-11,Transfused,29
+368,58,Platelets,2027-02-20,Available,42
+369,157,Platelets,2026-05-24,Transfused,3
+370,361,Plasma,2027-01-26,Transfused,34
+371,962,Whole Blood,2026-04-09,Expired,20
+372,344,Whole Blood,2026-10-31,Transfused,50
+373,256,Platelets,2026-07-06,Transfused,30
+374,296,Platelets,2026-03-26,Transfused,48
+375,367,Whole Blood,2027-01-13,Available,26
+376,754,Plasma,2026-04-19,Transfused,50
+377,255,Plasma,2026-12-11,Available,28
+378,276,Plasma,2026-06-04,Expired,3
+379,73,Whole Blood,2026-06-06,Transfused,20
+380,681,Platelets,2026-03-18,Reserved,28
+381,232,Whole Blood,2026-06-12,Transfused,34
+382,188,Whole Blood,2026-12-27,Available,49
+383,460,Plasma,2026-08-07,Available,13
+384,183,Plasma,2026-09-02,Discarded,31
+385,570,Whole Blood,2026-05-15,Transfused,17
+386,547,Plasma,2026-10-09,Discarded,35
+387,745,Plasma,2026-12-19,Available,45
+388,84,Whole Blood,2026-04-29,Expired,1
+389,22,Plasma,2026-04-26,Expired,13
+390,799,Plasma,2026-06-05,Discarded,4
+391,406,Platelets,2026-05-11,Available,23
+392,529,Platelets,2027-02-02,Available,1
+393,329,Whole Blood,2026-02-27,Transfused,30
+394,548,Platelets,2026-08-22,Available,25
+395,547,Whole Blood,2026-08-18,Transfused,48
+396,786,Whole Blood,2026-12-12,Discarded,5
+397,960,Plasma,2026-05-29,Reserved,9
+398,948,Plasma,2026-09-19,Available,11
+399,670,Platelets,2026-05-03,Transfused,49
+400,124,Whole Blood,2026-02-27,Reserved,22
+401,436,Plasma,2026-06-15,Reserved,35
+402,824,Platelets,2026-06-10,Transfused,12
+403,404,Whole Blood,2026-10-05,Available,17
+404,959,Whole Blood,2026-11-09,Expired,44
+405,58,Whole Blood,2026-08-22,Available,27
+406,249,Whole Blood,2026-11-23,Transfused,43
+407,945,Platelets,2026-09-24,Transfused,17
+408,482,Whole Blood,2026-12-22,Available,6
+409,452,Whole Blood,2026-11-28,Available,35
+410,578,Whole Blood,2026-06-25,Transfused,44
+411,78,Plasma,2027-01-22,Transfused,9
+412,721,Plasma,2026-09-28,Available,11
+413,745,Plasma,2026-12-26,Available,20
+414,363,Platelets,2027-01-07,Available,49
+415,622,Platelets,2026-11-03,Available,25
+416,21,Plasma,2026-06-16,Available,38
+417,878,Plasma,2026-08-31,Transfused,31
+418,31,Whole Blood,2026-07-17,Transfused,4
+419,213,Platelets,2026-12-16,Available,41
+420,761,Plasma,2026-04-30,Available,21
+421,506,Platelets,2026-09-06,Transfused,17
+422,531,Whole Blood,2026-06-27,Available,11
+423,807,Whole Blood,2026-11-29,Transfused,28
+424,550,Plasma,2026-12-13,Available,37
+425,165,Platelets,2026-04-22,Available,9
+426,417,Plasma,2026-08-29,Transfused,6
+427,310,Platelets,2026-10-10,Available,36
+428,963,Platelets,2026-09-23,Available,36
+429,239,Platelets,2026-12-10,Available,28
+430,765,Platelets,2026-10-20,Transfused,23
+431,616,Whole Blood,2026-11-02,Available,5
+432,344,Platelets,2026-09-03,Reserved,14
+433,667,Whole Blood,2027-01-05,Available,43
+434,626,Platelets,2026-04-20,Available,17
+435,977,Whole Blood,2026-09-01,Expired,28
+436,312,Platelets,2026-12-19,Discarded,48
+437,997,Platelets,2026-12-05,Available,9
+438,417,Whole Blood,2026-09-18,Available,43
+439,693,Platelets,2027-02-05,Available,41
+440,253,Whole Blood,2026-03-03,Available,44
+441,660,Whole Blood,2026-03-12,Available,41
+442,363,Plasma,2027-02-23,Available,2
+443,451,Whole Blood,2026-10-05,Available,48
+444,590,Whole Blood,2026-04-27,Transfused,31
+445,870,Plasma,2026-07-11,Available,42
+446,190,Plasma,2026-11-06,Available,15
+447,910,Whole Blood,2026-08-03,Transfused,21
+448,773,Platelets,2026-08-30,Reserved,41
+449,852,Platelets,2027-01-08,Transfused,47
+450,716,Platelets,2026-10-16,Discarded,46
+451,180,Whole Blood,2026-02-28,Discarded,4
+452,984,Plasma,2026-08-10,Transfused,33
+453,289,Platelets,2026-05-08,Available,50
+454,425,Whole Blood,2026-04-07,Available,30
+455,334,Platelets,2026-11-17,Available,29
+456,879,Whole Blood,2026-08-07,Available,5
+457,67,Platelets,2026-03-01,Available,21
+458,785,Platelets,2027-01-31,Available,26
+459,192,Whole Blood,2026-04-04,Available,40
+460,376,Platelets,2026-10-05,Available,49
+461,662,Plasma,2027-02-08,Transfused,19
+462,820,Whole Blood,2026-08-14,Reserved,20
+463,596,Whole Blood,2026-07-14,Transfused,40
+464,54,Whole Blood,2026-11-14,Transfused,19
+465,523,Platelets,2026-06-20,Available,32
+466,66,Whole Blood,2026-08-09,Transfused,1
+467,921,Whole Blood,2026-06-24,Available,9
+468,840,Plasma,2026-10-14,Available,38
+469,415,Platelets,2026-06-03,Available,32
+470,425,Platelets,2026-06-07,Expired,8
+471,781,Whole Blood,2026-08-09,Transfused,15
+472,356,Whole Blood,2027-01-06,Available,27
+473,983,Whole Blood,2026-10-13,Transfused,14
+474,187,Platelets,2026-10-11,Transfused,24
+475,469,Whole Blood,2026-04-25,Available,42
+476,164,Platelets,2026-05-23,Available,10
+477,248,Platelets,2026-06-28,Available,20
+478,619,Plasma,2026-07-20,Discarded,40
+479,937,Whole Blood,2026-03-23,Discarded,26
+480,54,Whole Blood,2026-06-22,Transfused,50
+481,57,Whole Blood,2026-12-26,Available,41
+482,853,Whole Blood,2026-09-02,Transfused,25
+483,531,Plasma,2026-08-25,Transfused,45
+484,889,Platelets,2026-04-05,Reserved,41
+485,503,Plasma,2026-11-18,Available,35
+486,218,Whole Blood,2027-01-31,Transfused,28
+487,561,Whole Blood,2026-07-08,Transfused,7
+488,831,Whole Blood,2026-06-10,Expired,33
+489,190,Plasma,2026-08-22,Available,38
+490,692,Whole Blood,2027-02-09,Available,42
+491,227,Plasma,2027-02-16,Available,34
+492,930,Plasma,2026-05-04,Available,50
+493,100,Plasma,2026-11-13,Available,30
+494,865,Platelets,2026-10-14,Available,46
+495,496,Whole Blood,2026-11-12,Transfused,2
+496,136,Whole Blood,2026-08-26,Discarded,20
+497,554,Whole Blood,2026-04-26,Transfused,43
+498,963,Plasma,2026-04-20,Transfused,4
+499,900,Platelets,2026-05-18,Available,11
+500,713,Whole Blood,2026-03-08,Available,5
+501,525,Plasma,2027-02-04,Available,5
+502,806,Whole Blood,2027-02-08,Reserved,45
+503,931,Platelets,2027-01-26,Transfused,31
+504,841,Plasma,2026-09-24,Reserved,37
+505,290,Plasma,2026-04-06,Available,48
+506,4,Plasma,2026-03-15,Available,1
+507,945,Platelets,2026-06-10,Available,29
+508,737,Whole Blood,2026-09-16,Transfused,19
+509,219,Whole Blood,2026-03-20,Reserved,12
+510,455,Whole Blood,2026-12-26,Transfused,23
+511,622,Platelets,2026-11-27,Transfused,48
+512,50,Platelets,2026-10-07,Expired,21
+513,799,Plasma,2026-07-09,Transfused,33
+514,838,Whole Blood,2026-11-15,Reserved,21
+515,820,Platelets,2026-04-06,Transfused,21
+516,239,Plasma,2026-07-11,Expired,39
+517,782,Plasma,2026-04-24,Available,43
+518,795,Whole Blood,2026-02-25,Available,6
+519,366,Whole Blood,2027-02-16,Transfused,35
+520,420,Plasma,2026-06-19,Transfused,32
+521,428,Plasma,2026-05-31,Available,27
+522,243,Platelets,2026-08-21,Reserved,25
+523,123,Platelets,2026-06-13,Transfused,40
+524,680,Plasma,2026-11-15,Transfused,40
+525,139,Whole Blood,2026-10-08,Reserved,16
+526,95,Whole Blood,2027-02-14,Available,39
+527,410,Platelets,2026-07-17,Available,29
+528,384,Plasma,2027-01-21,Expired,47
+529,66,Plasma,2026-08-31,Available,47
+530,621,Plasma,2026-12-22,Discarded,11
+531,273,Whole Blood,2026-11-13,Transfused,5
+532,739,Plasma,2026-08-30,Transfused,31
+533,193,Whole Blood,2027-01-23,Available,8
+534,517,Platelets,2026-03-06,Expired,23
+535,172,Plasma,2026-04-02,Transfused,25
+536,18,Plasma,2026-11-19,Available,45
+537,734,Whole Blood,2027-01-15,Available,15
+538,564,Whole Blood,2026-11-18,Transfused,40
+539,554,Whole Blood,2027-01-27,Available,13
+540,831,Plasma,2026-12-22,Transfused,2
+541,358,Whole Blood,2027-01-10,Discarded,9
+542,322,Plasma,2026-04-03,Available,48
+543,217,Whole Blood,2027-02-14,Available,1
+544,38,Plasma,2026-09-17,Transfused,44
+545,788,Plasma,2026-05-11,Expired,4
+546,537,Plasma,2026-09-25,Transfused,32
+547,945,Platelets,2026-05-24,Available,22
+548,511,Plasma,2026-10-09,Transfused,3
+549,486,Plasma,2027-02-23,Transfused,34
+550,513,Plasma,2026-11-20,Available,47
+551,117,Whole Blood,2026-12-02,Available,2
+552,271,Platelets,2026-12-06,Transfused,49
+553,912,Whole Blood,2026-05-28,Transfused,43
+554,986,Platelets,2026-11-04,Transfused,10
+555,57,Platelets,2026-04-13,Transfused,29
+556,423,Whole Blood,2027-01-23,Transfused,22
+557,977,Platelets,2026-08-29,Transfused,31
+558,183,Whole Blood,2026-11-02,Available,30
+559,624,Whole Blood,2027-02-15,Transfused,49
+560,372,Plasma,2026-08-03,Expired,4
+561,454,Whole Blood,2026-12-08,Available,38
+562,547,Platelets,2026-03-15,Transfused,32
+563,382,Platelets,2026-08-08,Transfused,32
+564,93,Plasma,2026-07-04,Available,38
+565,260,Plasma,2027-01-18,Transfused,43
+566,739,Platelets,2026-12-24,Available,3
+567,917,Plasma,2026-12-13,Available,24
+568,993,Whole Blood,2026-09-09,Available,50
+569,680,Platelets,2026-10-20,Available,22
+570,478,Whole Blood,2026-06-01,Available,14
+571,40,Platelets,2026-08-11,Discarded,6
+572,576,Whole Blood,2026-07-02,Expired,11
+573,596,Plasma,2026-05-11,Transfused,13
+574,657,Plasma,2026-08-29,Available,31
+575,990,Plasma,2026-07-20,Available,46
+576,307,Whole Blood,2026-08-10,Transfused,29
+577,929,Platelets,2026-06-13,Transfused,40
+578,924,Whole Blood,2026-09-18,Transfused,28
+579,55,Platelets,2026-04-15,Available,38
+580,381,Whole Blood,2026-05-22,Available,28
+581,298,Plasma,2026-05-27,Available,21
+582,993,Plasma,2026-09-09,Transfused,17
+583,916,Plasma,2026-07-03,Discarded,36
+584,136,Whole Blood,2026-02-26,Reserved,49
+585,267,Platelets,2026-03-02,Reserved,36
+586,419,Whole Blood,2026-10-24,Available,11
+587,829,Whole Blood,2026-04-12,Available,8
+588,371,Whole Blood,2026-10-26,Discarded,8
+589,389,Plasma,2026-05-29,Reserved,21
+590,388,Platelets,2026-07-02,Available,1
+591,347,Plasma,2026-07-07,Transfused,39
+592,735,Platelets,2026-08-18,Transfused,9
+593,529,Platelets,2026-11-20,Available,42
+594,873,Whole Blood,2026-04-04,Available,24
+595,758,Whole Blood,2026-03-22,Transfused,23
+596,78,Plasma,2026-04-20,Available,45
+597,162,Platelets,2026-04-04,Available,37
+598,652,Plasma,2026-04-07,Discarded,4
+599,637,Whole Blood,2026-09-03,Transfused,47
+600,470,Whole Blood,2026-07-08,Transfused,40
+601,545,Platelets,2026-04-29,Available,13
+602,77,Plasma,2026-12-12,Discarded,30
+603,40,Platelets,2026-07-18,Reserved,44
+604,908,Whole Blood,2026-03-28,Expired,47
+605,1000,Platelets,2026-09-20,Available,6
+606,480,Whole Blood,2026-09-18,Reserved,44
+607,98,Plasma,2027-02-04,Reserved,23
+608,788,Plasma,2026-10-28,Transfused,7
+609,298,Plasma,2026-10-21,Available,10
+610,762,Whole Blood,2026-12-07,Available,31
+611,881,Whole Blood,2026-05-18,Transfused,47
+612,40,Whole Blood,2026-03-04,Expired,29
+613,76,Platelets,2026-11-02,Transfused,46
+614,553,Platelets,2026-10-25,Available,30
+615,800,Whole Blood,2027-02-17,Reserved,48
+616,814,Whole Blood,2026-02-27,Transfused,29
+617,399,Plasma,2027-01-12,Available,24
+618,515,Whole Blood,2026-10-29,Discarded,39
+619,255,Plasma,2026-05-15,Transfused,42
+620,771,Plasma,2026-07-27,Transfused,31
+621,740,Platelets,2026-03-31,Transfused,45
+622,428,Plasma,2026-11-14,Transfused,1
+623,623,Whole Blood,2026-12-08,Available,36
+624,440,Platelets,2026-06-09,Expired,14
+625,147,Plasma,2026-09-28,Available,18
+626,708,Plasma,2026-08-25,Available,41
+627,22,Plasma,2027-01-10,Available,22
+628,856,Platelets,2026-03-10,Available,5
+629,107,Whole Blood,2026-11-08,Transfused,24
+630,689,Whole Blood,2026-07-14,Expired,50
+631,102,Whole Blood,2026-10-20,Transfused,45
+632,885,Whole Blood,2026-05-24,Available,3
+633,409,Platelets,2026-08-30,Transfused,48
+634,247,Platelets,2027-02-12,Available,19
+635,665,Whole Blood,2026-11-10,Transfused,15
+636,726,Platelets,2026-08-21,Available,7
+637,25,Whole Blood,2026-06-03,Available,1
+638,451,Whole Blood,2026-05-28,Reserved,30
+639,155,Plasma,2027-02-10,Available,46
+640,653,Platelets,2027-01-20,Reserved,2
+641,272,Whole Blood,2026-05-28,Transfused,17
+642,283,Plasma,2026-12-29,Transfused,12
+643,830,Platelets,2026-05-18,Discarded,38
+644,318,Whole Blood,2026-07-11,Available,42
+645,92,Plasma,2026-07-25,Available,47
+646,26,Platelets,2026-08-16,Transfused,33
+647,605,Plasma,2026-10-21,Available,39
+648,10,Platelets,2026-10-29,Available,42
+649,393,Plasma,2026-08-04,Discarded,43
+650,174,Platelets,2026-10-16,Available,40
+651,641,Platelets,2026-11-11,Transfused,42
+652,454,Plasma,2026-12-16,Available,4
+653,962,Whole Blood,2027-01-08,Transfused,27
+654,382,Whole Blood,2026-05-25,Discarded,15
+655,914,Plasma,2026-06-21,Available,48
+656,439,Platelets,2026-04-12,Transfused,47
+657,945,Whole Blood,2026-03-29,Available,13
+658,157,Plasma,2026-04-22,Available,30
+659,485,Whole Blood,2026-12-12,Transfused,18
+660,322,Whole Blood,2027-01-05,Available,32
+661,111,Platelets,2026-03-11,Transfused,18
+662,991,Whole Blood,2027-01-03,Reserved,5
+663,123,Platelets,2027-01-11,Available,33
+664,86,Platelets,2026-07-29,Transfused,7
+665,876,Plasma,2026-10-30,Available,32
+666,834,Plasma,2026-05-17,Available,17
+667,955,Platelets,2027-01-29,Transfused,13
+668,423,Plasma,2026-08-31,Available,48
+669,608,Plasma,2027-02-18,Available,16
+670,276,Platelets,2027-01-17,Available,36
+671,848,Platelets,2026-06-08,Available,47
+672,716,Platelets,2026-06-17,Transfused,37
+673,255,Whole Blood,2027-01-18,Transfused,15
+674,511,Plasma,2027-01-20,Transfused,24
+675,510,Platelets,2026-09-22,Transfused,22
+676,129,Whole Blood,2026-08-16,Available,35
+677,683,Platelets,2026-10-05,Reserved,45
+678,632,Platelets,2026-06-03,Transfused,17
+679,690,Whole Blood,2026-10-08,Transfused,16
+680,973,Plasma,2026-09-16,Transfused,37
+681,168,Whole Blood,2026-07-31,Transfused,27
+682,204,Whole Blood,2026-09-04,Available,34
+683,389,Whole Blood,2026-05-24,Expired,37
+684,162,Whole Blood,2027-01-16,Expired,4
+685,422,Whole Blood,2026-10-06,Expired,12
+686,894,Plasma,2026-06-10,Available,11
+687,375,Whole Blood,2026-05-19,Expired,50
+688,836,Platelets,2026-08-12,Reserved,16
+689,309,Plasma,2026-05-09,Transfused,47
+690,446,Plasma,2026-03-18,Expired,13
+691,486,Platelets,2027-02-01,Available,24
+692,604,Plasma,2026-06-12,Available,47
+693,309,Plasma,2026-12-30,Transfused,16
+694,810,Whole Blood,2026-06-22,Available,42
+695,651,Whole Blood,2026-10-21,Transfused,35
+696,326,Plasma,2026-12-24,Discarded,31
+697,905,Whole Blood,2026-07-23,Discarded,35
+698,539,Whole Blood,2026-10-02,Available,12
+699,363,Plasma,2027-02-09,Available,31
+700,636,Plasma,2026-08-23,Discarded,3
+701,350,Plasma,2026-09-19,Transfused,44
+702,629,Platelets,2027-02-15,Transfused,27
+703,1,Platelets,2026-11-22,Transfused,11
+704,917,Plasma,2026-08-09,Reserved,7
+705,259,Platelets,2026-06-22,Available,49
+706,939,Platelets,2026-11-18,Available,49
+707,749,Platelets,2026-03-18,Discarded,12
+708,303,Platelets,2026-10-23,Available,14
+709,444,Platelets,2026-12-27,Transfused,38
+710,736,Plasma,2026-08-26,Available,34
+711,327,Plasma,2026-10-03,Discarded,31
+712,744,Plasma,2026-04-08,Expired,39
+713,234,Whole Blood,2027-01-24,Transfused,36
+714,684,Whole Blood,2026-04-01,Available,33
+715,744,Platelets,2027-02-05,Transfused,45
+716,686,Platelets,2026-08-28,Reserved,38
+717,180,Whole Blood,2026-11-22,Expired,16
+718,595,Plasma,2026-05-18,Reserved,13
+719,282,Platelets,2026-09-26,Transfused,3
+720,470,Platelets,2026-08-29,Available,11
+721,187,Whole Blood,2027-01-22,Available,50
+722,929,Whole Blood,2026-06-02,Transfused,18
+723,874,Plasma,2027-01-17,Transfused,21
+724,608,Plasma,2026-07-14,Reserved,15
+725,503,Plasma,2026-08-10,Transfused,37
+726,360,Platelets,2026-12-11,Available,14
+727,954,Plasma,2026-06-08,Available,36
+728,85,Platelets,2026-09-07,Transfused,33
+729,314,Whole Blood,2026-09-22,Expired,26
+730,15,Platelets,2026-04-20,Available,6
+731,633,Whole Blood,2026-04-22,Transfused,18
+732,75,Platelets,2026-06-19,Available,7
+733,241,Whole Blood,2026-07-03,Transfused,17
+734,412,Platelets,2026-06-30,Available,27
+735,793,Platelets,2026-10-28,Available,11
+736,969,Plasma,2026-10-13,Transfused,15
+737,218,Plasma,2026-03-12,Discarded,14
+738,873,Platelets,2026-05-24,Available,23
+739,53,Platelets,2027-02-18,Transfused,23
+740,63,Whole Blood,2026-12-23,Available,41
+741,651,Platelets,2027-01-16,Available,21
+742,886,Whole Blood,2026-07-20,Transfused,15
+743,995,Whole Blood,2026-05-13,Transfused,41
+744,688,Whole Blood,2026-12-25,Transfused,28
+745,181,Plasma,2026-07-04,Transfused,29
+746,433,Plasma,2026-04-18,Available,19
+747,456,Plasma,2026-10-26,Expired,6
+748,795,Plasma,2026-10-25,Transfused,18
+749,699,Platelets,2027-01-18,Transfused,1
+750,337,Plasma,2027-02-09,Expired,12
+751,962,Plasma,2026-12-29,Available,33
+752,266,Platelets,2026-03-14,Discarded,20
+753,219,Plasma,2026-04-05,Transfused,23
+754,558,Whole Blood,2026-09-05,Available,36
+755,294,Whole Blood,2026-12-20,Transfused,16
+756,496,Platelets,2027-01-29,Transfused,7
+757,528,Platelets,2027-01-12,Reserved,47
+758,650,Plasma,2026-09-06,Available,49
+759,803,Plasma,2026-08-24,Transfused,44
+760,878,Platelets,2026-03-30,Transfused,30
+761,572,Platelets,2026-08-05,Available,8
+762,512,Whole Blood,2026-07-09,Transfused,22
+763,753,Platelets,2027-01-18,Transfused,7
+764,924,Whole Blood,2026-08-22,Transfused,47
+765,845,Whole Blood,2026-03-21,Available,31
+766,728,Whole Blood,2026-10-16,Transfused,32
+767,177,Whole Blood,2026-02-27,Available,26
+768,890,Whole Blood,2026-12-03,Discarded,50
+769,572,Whole Blood,2026-11-11,Expired,13
+770,169,Platelets,2026-07-09,Available,29
+771,7,Plasma,2027-02-20,Transfused,26
+772,372,Plasma,2026-03-03,Available,25
+773,560,Whole Blood,2027-01-14,Transfused,45
+774,294,Plasma,2026-10-22,Available,1
+775,277,Platelets,2026-05-21,Available,24
+776,80,Platelets,2026-12-19,Available,30
+777,340,Plasma,2026-12-11,Reserved,12
+778,861,Plasma,2026-10-18,Transfused,37
+779,658,Whole Blood,2026-05-26,Discarded,42
+780,864,Plasma,2026-12-22,Transfused,15
+781,331,Platelets,2026-11-07,Available,29
+782,483,Platelets,2026-04-01,Available,7
+783,341,Plasma,2026-08-31,Available,16
+784,759,Plasma,2027-01-06,Transfused,3
+785,217,Whole Blood,2026-06-27,Expired,35
+786,452,Whole Blood,2026-10-02,Transfused,50
+787,315,Whole Blood,2026-09-12,Available,36
+788,19,Whole Blood,2026-03-23,Available,31
+789,338,Whole Blood,2026-04-27,Expired,1
+790,222,Plasma,2026-04-05,Reserved,48
+791,926,Platelets,2027-01-29,Transfused,34
+792,111,Platelets,2026-06-15,Transfused,17
+793,655,Plasma,2026-12-17,Transfused,25
+794,110,Plasma,2026-10-22,Transfused,26
+795,453,Plasma,2026-08-21,Transfused,22
+796,63,Plasma,2026-06-05,Transfused,40
+797,469,Plasma,2026-10-28,Available,10
+798,505,Whole Blood,2026-03-01,Available,32
+799,857,Plasma,2026-10-16,Available,41
+800,291,Platelets,2026-07-27,Transfused,44
+801,262,Plasma,2026-08-29,Transfused,44
+802,129,Platelets,2026-12-12,Transfused,33
+803,34,Platelets,2026-09-01,Available,33
+804,453,Plasma,2026-09-10,Discarded,38
+805,898,Platelets,2026-09-28,Available,18
+806,546,Whole Blood,2026-06-18,Available,43
+807,759,Whole Blood,2026-11-02,Expired,28
+808,745,Whole Blood,2026-05-13,Transfused,42
+809,595,Platelets,2027-02-15,Transfused,42
+810,453,Whole Blood,2026-04-04,Available,14
+811,275,Platelets,2026-12-09,Reserved,43
+812,162,Platelets,2027-01-06,Reserved,43
+813,719,Whole Blood,2026-07-27,Reserved,44
+814,43,Plasma,2026-11-27,Available,9
+815,908,Whole Blood,2026-09-18,Reserved,44
+816,107,Whole Blood,2026-07-15,Expired,6
+817,998,Whole Blood,2026-10-17,Expired,4
+818,661,Platelets,2026-09-23,Reserved,6
+819,105,Whole Blood,2026-04-05,Available,46
+820,342,Platelets,2026-04-24,Available,48
+821,577,Platelets,2026-12-22,Transfused,21
+822,428,Plasma,2026-03-25,Available,20
+823,352,Whole Blood,2026-10-02,Transfused,35
+824,512,Plasma,2027-01-01,Transfused,42
+825,479,Whole Blood,2026-07-05,Available,24
+826,281,Whole Blood,2026-08-22,Transfused,38
+827,874,Whole Blood,2026-07-04,Available,43
+828,681,Whole Blood,2026-10-28,Transfused,19
+829,570,Whole Blood,2026-11-03,Transfused,42
+830,260,Plasma,2026-12-08,Available,42
+831,28,Whole Blood,2026-03-24,Transfused,47
+832,157,Platelets,2026-10-05,Expired,43
+833,323,Plasma,2026-11-11,Transfused,26
+834,546,Plasma,2026-08-04,Available,4
+835,606,Whole Blood,2026-09-21,Discarded,31
+836,711,Platelets,2026-11-07,Available,2
+837,658,Plasma,2026-07-18,Transfused,29
+838,880,Whole Blood,2026-11-19,Available,33
+839,847,Whole Blood,2026-07-12,Transfused,20
+840,206,Whole Blood,2027-02-22,Transfused,41
+841,799,Plasma,2026-10-02,Reserved,49
+842,763,Plasma,2026-07-28,Transfused,13
+843,90,Whole Blood,2026-08-19,Reserved,15
+844,272,Platelets,2026-11-03,Transfused,31
+845,302,Plasma,2027-02-08,Available,10
+846,1000,Platelets,2026-11-17,Transfused,20
+847,765,Platelets,2026-12-14,Transfused,24
+848,344,Whole Blood,2026-12-07,Transfused,16
+849,79,Platelets,2026-04-12,Transfused,11
+850,316,Platelets,2026-05-30,Reserved,24
+851,393,Plasma,2026-03-30,Expired,5
+852,641,Platelets,2026-05-27,Available,36
+853,41,Whole Blood,2026-12-27,Discarded,12
+854,882,Whole Blood,2026-04-23,Transfused,47
+855,470,Plasma,2026-12-16,Transfused,13
+856,28,Platelets,2027-01-20,Expired,20
+857,532,Platelets,2026-11-26,Transfused,19
+858,947,Whole Blood,2026-11-16,Transfused,28
+859,508,Plasma,2026-03-07,Transfused,36
+860,426,Whole Blood,2026-08-30,Discarded,22
+861,134,Plasma,2026-07-08,Reserved,42
+862,699,Plasma,2027-02-14,Transfused,31
+863,291,Plasma,2026-12-24,Available,16
+864,374,Platelets,2027-01-12,Expired,42
+865,60,Platelets,2026-04-29,Transfused,9
+866,813,Platelets,2027-02-10,Transfused,38
+867,396,Whole Blood,2026-08-15,Expired,5
+868,52,Platelets,2026-12-23,Transfused,2
+869,813,Whole Blood,2027-01-13,Available,16
+870,14,Whole Blood,2026-08-01,Discarded,16
+871,411,Platelets,2027-01-28,Transfused,3
+872,22,Whole Blood,2026-06-11,Expired,24
+873,545,Whole Blood,2026-04-04,Available,24
+874,285,Platelets,2026-08-03,Available,24
+875,239,Platelets,2026-10-02,Available,33
+876,695,Plasma,2026-10-21,Transfused,47
+877,386,Whole Blood,2026-10-02,Available,50
+878,36,Whole Blood,2026-05-13,Discarded,30
+879,204,Plasma,2026-03-07,Available,26
+880,624,Platelets,2026-12-10,Available,17
+881,113,Plasma,2026-06-16,Transfused,25
+882,873,Whole Blood,2026-10-02,Available,41
+883,235,Platelets,2026-04-20,Discarded,8
+884,418,Platelets,2026-08-19,Transfused,17
+885,295,Platelets,2026-03-28,Transfused,2
+886,62,Plasma,2026-12-19,Transfused,21
+887,811,Plasma,2026-05-25,Reserved,24
+888,404,Plasma,2027-01-17,Transfused,2
+889,877,Platelets,2026-10-02,Transfused,18
+890,564,Platelets,2026-03-19,Transfused,22
+891,171,Whole Blood,2026-08-18,Transfused,45
+892,783,Plasma,2027-01-13,Transfused,26
+893,247,Whole Blood,2026-08-01,Available,33
+894,366,Platelets,2027-02-10,Transfused,27
+895,558,Platelets,2026-08-23,Available,25
+896,911,Platelets,2026-04-04,Available,36
+897,44,Whole Blood,2026-05-16,Reserved,50
+898,271,Whole Blood,2027-01-10,Expired,26
+899,876,Plasma,2026-09-28,Available,15
+900,573,Platelets,2026-08-26,Reserved,38
+901,347,Whole Blood,2027-01-24,Transfused,47
+902,203,Whole Blood,2026-03-30,Reserved,17
+903,7,Platelets,2026-11-19,Transfused,44
+904,875,Platelets,2026-05-15,Available,41
+905,556,Platelets,2026-07-20,Discarded,45
+906,314,Whole Blood,2026-04-17,Expired,8
+907,893,Plasma,2026-06-27,Available,18
+908,176,Plasma,2026-08-29,Transfused,29
+909,187,Plasma,2026-11-16,Expired,33
+910,394,Platelets,2027-01-30,Available,19
+911,536,Plasma,2026-12-16,Expired,29
+912,994,Whole Blood,2027-01-25,Reserved,10
+913,41,Whole Blood,2026-03-06,Reserved,44
+914,536,Whole Blood,2026-06-04,Available,38
+915,888,Platelets,2026-12-07,Transfused,36
+916,200,Whole Blood,2026-06-25,Transfused,31
+917,335,Plasma,2027-02-05,Transfused,29
+918,654,Platelets,2026-04-13,Available,28
+919,129,Plasma,2026-08-14,Transfused,43
+920,753,Whole Blood,2027-02-19,Transfused,15
+921,983,Plasma,2026-08-23,Available,2
+922,765,Whole Blood,2026-12-04,Available,30
+923,988,Platelets,2026-06-14,Transfused,30
+924,651,Whole Blood,2027-02-18,Transfused,34
+925,9,Plasma,2026-10-04,Expired,11
+926,853,Plasma,2026-03-30,Available,32
+927,82,Platelets,2027-01-06,Transfused,4
+928,205,Platelets,2026-05-20,Available,48
+929,518,Plasma,2026-08-27,Transfused,8
+930,381,Platelets,2026-12-27,Reserved,14
+931,999,Plasma,2027-01-23,Transfused,26
+932,49,Plasma,2026-03-20,Reserved,24
+933,179,Whole Blood,2026-10-16,Transfused,40
+934,381,Whole Blood,2026-08-31,Transfused,12
+935,930,Whole Blood,2026-09-17,Transfused,16
+936,103,Plasma,2026-05-08,Transfused,48
+937,849,Whole Blood,2026-12-20,Available,6
+938,487,Whole Blood,2026-08-13,Available,49
+939,88,Platelets,2026-04-23,Available,3
+940,94,Platelets,2026-06-21,Transfused,11
+941,959,Plasma,2026-10-10,Discarded,4
+942,158,Platelets,2026-11-10,Transfused,2
+943,150,Whole Blood,2026-09-15,Transfused,33
+944,27,Platelets,2026-09-27,Available,10
+945,465,Plasma,2026-03-29,Transfused,29
+946,513,Whole Blood,2027-01-12,Transfused,45
+947,905,Platelets,2026-12-27,Expired,31
+948,43,Whole Blood,2026-06-03,Transfused,13
+949,640,Platelets,2026-12-07,Available,48
+950,140,Whole Blood,2026-07-28,Available,40
+951,167,Whole Blood,2026-03-25,Reserved,36
+952,747,Platelets,2026-12-21,Reserved,30
+953,536,Whole Blood,2026-05-14,Transfused,40
+954,427,Whole Blood,2026-08-01,Transfused,48
+955,679,Plasma,2027-02-06,Reserved,46
+956,613,Platelets,2026-07-24,Available,25
+957,765,Plasma,2026-12-08,Available,22
+958,223,Whole Blood,2026-03-17,Available,15
+959,182,Whole Blood,2026-08-14,Transfused,7
+960,609,Plasma,2026-06-27,Available,5
+961,303,Platelets,2026-11-03,Transfused,45
+962,385,Whole Blood,2026-08-07,Transfused,11
+963,508,Whole Blood,2027-01-22,Available,28
+964,843,Platelets,2026-07-26,Reserved,46
+965,490,Whole Blood,2027-02-01,Available,8
+966,991,Whole Blood,2027-02-11,Transfused,8
+967,31,Whole Blood,2026-10-28,Available,1
+968,295,Platelets,2026-06-27,Available,42
+969,41,Platelets,2026-11-09,Transfused,39
+970,219,Plasma,2027-01-29,Transfused,27
+971,632,Platelets,2026-04-30,Transfused,33
+972,434,Platelets,2026-09-11,Reserved,8
+973,402,Whole Blood,2026-11-15,Available,46
+974,375,Platelets,2026-07-14,Available,1
+975,75,Platelets,2027-02-14,Available,25
+976,651,Plasma,2026-08-17,Transfused,23
+977,889,Whole Blood,2026-09-26,Available,22
+978,959,Platelets,2026-03-16,Transfused,17
+979,897,Plasma,2026-08-02,Available,46
+980,559,Platelets,2027-01-27,Transfused,10
+981,756,Platelets,2026-12-25,Available,50
+982,379,Plasma,2026-09-01,Available,1
+983,877,Whole Blood,2026-11-09,Expired,27
+984,182,Plasma,2026-12-04,Transfused,35
+985,448,Whole Blood,2026-05-26,Transfused,9
+986,839,Plasma,2026-11-22,Reserved,34
+987,351,Whole Blood,2026-10-23,Available,34
+988,190,Plasma,2026-04-03,Transfused,45
+989,863,Plasma,2026-08-27,Transfused,45
+990,651,Platelets,2026-05-04,Expired,33
+991,529,Platelets,2026-06-18,Available,30
+992,90,Plasma,2027-01-26,Available,8
+993,574,Whole Blood,2026-08-12,Available,14
+994,322,Platelets,2026-05-03,Available,12
+995,369,Platelets,2026-04-01,Discarded,36
+996,621,Plasma,2026-11-02,Transfused,26
+997,167,Plasma,2026-05-26,Reserved,28
+998,41,Platelets,2026-11-28,Transfused,22
+999,342,Platelets,2026-05-22,Available,41
+1000,830,Platelets,2026-03-17,Transfused,6

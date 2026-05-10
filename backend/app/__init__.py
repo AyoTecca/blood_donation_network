@@ -1,0 +1,1 @@
+"""Blood network FastAPI application."""

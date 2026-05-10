@@ -1,0 +1,44 @@
+# Secrets and local env (keep `.env.example` tracked)
+.env
+.env.*
+!.env.example
+.envrc
+backend/.env
+frontend/.env
+
+# Keys / material that must never be in git
+*.pem
+*.p12
+*.pfx
+id_rsa
+id_rsa.pub
+id_ed25519
+id_ed25519.pub
+
+# OS / editor
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+.idea/
+.vscode/*
+!.vscode/extensions.json
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+*.egg-info/
+
+# Backend
+backend/.venv/
+backend/htmlcov/
+backend/.coverage
+
+# Frontend
+frontend/node_modules/
+frontend/dist/
+frontend/dist-ssr/

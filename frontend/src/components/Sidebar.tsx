@@ -1,0 +1,39 @@
+import { NavLink } from "react-router-dom";
+import { useAuth } from "../context/AuthContext";
+
+export function Sidebar() {
+  const { user, logout } = useAuth();
+
+  return (
+    <aside className="sidebar">
+      <div className="sidebar-brand">
+        <h2 className="sidebar-title">Blood Donation</h2>
+        <p className="sidebar-sub">Compatibility Network</p>
+      </div>
+      <nav className="sidebar-nav">
+        <NavLink to="/" end className={({ isActive }) => (isActive ? "nav-link active" : "nav-link")}>
+          Home
+        </NavLink>
+        {user?.role === "admin" && (
+          <NavLink
+            to="/admin"
+            className={({ isActive }) => (isActive ? "nav-link active" : "nav-link")}
+          >
+            Admin
+          </NavLink>
+        )}
+      </nav>
+      <div className="sidebar-footer">
+        {user && (
+          <p className="sidebar-user">
+            {user.email}
+            <span className="role-badge">{user.role}</span>
+          </p>
+        )}
+        <button type="button" className="btn btn-secondary" onClick={logout}>
+          Sign out
+        </button>
+      </div>
+    </aside>
+  );
+}

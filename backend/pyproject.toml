@@ -1,0 +1,31 @@
+[tool.poetry]
+name = "blood-network-backend"
+version = "0.1.0"
+description = "FastAPI backend for Blood Donation Compatibility Network (Oracle)"
+readme = "README.md"
+authors = []
+packages = [{ include = "app" }]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+fastapi = "^0.115.6"
+uvicorn = { extras = ["standard"], version = "^0.32.1" }
+sqlalchemy = "^2.0.36"
+alembic = "^1.14.0"
+oracledb = "^2.5.1"
+python-dotenv = "^1.0.1"
+python-jose = { extras = ["cryptography"], version = "^3.3.0" }
+passlib = { extras = ["bcrypt"], version = "^1.7.4" }
+# passlib 1.7.4 is incompatible with bcrypt 5.x (AttributeError: __about__; bcrypt 72-byte checks in self-tests)
+bcrypt = ">=4.0.1,<4.1"
+python-multipart = "^0.0.17"
+email-validator = "^2.2.0"
+
+[tool.poetry.group.dev.dependencies]
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.scripts]
+dev = "uvicorn app.main:app --reload --host 0.0.0.0 --port 8000"
