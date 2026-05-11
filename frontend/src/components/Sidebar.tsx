@@ -20,6 +20,9 @@ export function Sidebar() {
         <NavLink to="/dashboard" className={({ isActive }) => (isActive ? "nav-link active" : "nav-link")}>
           Dashboard
         </NavLink>
+        <NavLink to="/dispatches" className={({ isActive }) => (isActive ? "nav-link active" : "nav-link")}>
+          Logistics
+        </NavLink>
         {user?.role === "admin" && (
           <NavLink
             to="/admin"

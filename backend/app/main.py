@@ -3,7 +3,7 @@ from __future__ import annotations
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
-from app.routers import admin, auth, dashboard, data, public, requests, analytics
+from app.routers import admin, auth, dashboard, data, public, requests, analytics, dispatches
 
 app = FastAPI(title="Blood Donation Network API", version="0.2.0")
 
@@ -25,6 +25,7 @@ app.include_router(dashboard.router)
 app.include_router(data.router)
 app.include_router(requests.router)
 app.include_router(analytics.router)
+app.include_router(dispatches.router)
 
 
 @app.get("/health")

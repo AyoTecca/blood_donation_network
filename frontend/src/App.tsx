@@ -8,6 +8,7 @@ import { RequireAdmin } from "./routes/RequireAdmin";
 import { RequireAuth } from "./routes/RequireAuth";
 import { RequestsPage } from "./pages/RequestsPage";
 import { DashboardPage } from "./pages/DashboardPage";
+import { DispatchesPage } from "./pages/DispatchesPage";
 
 export default function App() {
   return (
@@ -31,6 +32,7 @@ export default function App() {
                 element={<RequestsPage />}
               />
               <Route path="/dashboard" element={<DashboardPage />} />
+              <Route path="dispatches" element={<DispatchesPage />} />
             </Route>
           </Route>
           <Route path="*" element={<Navigate to="/" replace />} />
