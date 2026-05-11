@@ -16,7 +16,6 @@ router = APIRouter(
 
 @router.get("/", response_model=List[Dict[str, Any]])
 def get_requests_list(
-    # Меняем тип current_user на Any (так как это объект AppUser, а не dict)
     db: Session = Depends(get_db),
     current_user: Any = Depends(get_current_user) 
 ):
@@ -24,7 +23,6 @@ def get_requests_list(
     Retrieves a list of blood transfusion requests.
     Joins with the patients table to get facility and blood type info.
     """
-    # ИСправляем ошибку: используем getattr вместо .get()
     user_email = getattr(current_user, 'email', 'unknown')
     logger.info(f"User {user_email} requested the transfusion requests list.")
     
@@ -50,7 +48,6 @@ def get_requests_list(
         result = db.execute(query).mappings().all()
         logger.info(f"Successfully retrieved {len(result)} requests from the database.")
         
-        # Исправляем капслок Oracle: переводим ключи в нижний регистр для React
         return [{k.lower(): v for k, v in dict(row).items()} for row in result]
         
     except Exception as e:
@@ -67,7 +64,6 @@ def run_blood_matching(
     to automatically allocate available blood units to pending requests.
     Requires Admin privileges.
     """
-    # Исправляем ошибку и здесь тоже
     user_email = getattr(current_user, 'email', 'unknown')
     logger.info(f"Admin {user_email} initiated the blood matching process.")
     

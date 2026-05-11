@@ -14,6 +14,9 @@ export function Sidebar() {
         <NavLink to="/" end className={({ isActive }) => (isActive ? "nav-link active" : "nav-link")}>
           Home
         </NavLink>
+        <NavLink to="/audit" className={({ isActive }) => (isActive ? "nav-link active" : "nav-link")}>
+          Audit Log
+        </NavLink>
         <NavLink to="/requests" className={({ isActive }) => (isActive ? "nav-link active" : "nav-link")}>
           Requests
         </NavLink>

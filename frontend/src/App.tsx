@@ -9,6 +9,7 @@ import { RequireAuth } from "./routes/RequireAuth";
 import { RequestsPage } from "./pages/RequestsPage";
 import { DashboardPage } from "./pages/DashboardPage";
 import { DispatchesPage } from "./pages/DispatchesPage";
+import { AuditPage } from "./pages/AuditPage";
 
 export default function App() {
   return (
@@ -31,6 +32,7 @@ export default function App() {
                 path="requests"
                 element={<RequestsPage />}
               />
+              <Route path="/audit" element={<AuditPage />} />
               <Route path="/dashboard" element={<DashboardPage />} />
               <Route path="dispatches" element={<DispatchesPage />} />
             </Route>
