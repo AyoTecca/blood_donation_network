@@ -3,7 +3,6 @@ SELECT
     u.unit_id,
     u.status AS unit_status,
     TO_CHAR(u.expiry_date, 'YYYY-MM-DD') AS expiry_date,
-    u.volume_ml,
     de.donation_id,
     TO_CHAR(de.donation_date, 'YYYY-MM-DD') AS donation_date,
     d.donor_id,

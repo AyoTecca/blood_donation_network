@@ -11,6 +11,7 @@ import { DashboardPage } from "./pages/DashboardPage";
 import { DispatchesPage } from "./pages/DispatchesPage";
 import { AuditPage } from "./pages/AuditPage";
 import { CompatibilityLab } from "./pages/CompatibilityLab";
+import { ProvenancePage } from "./pages/ProvenancePage";
 
 export default function App() {
   return (
@@ -36,6 +37,7 @@ export default function App() {
               <Route path="/audit" element={<AuditPage />} />
               <Route path="/dashboard" element={<DashboardPage />} />
               <Route path="/compatibility" element={<CompatibilityLab />} />
+              <Route path="/provenance" element={<ProvenancePage />} />
               <Route path="dispatches" element={<DispatchesPage />} />
             </Route>
           </Route>
