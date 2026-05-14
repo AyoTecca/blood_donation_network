@@ -29,24 +29,28 @@ def get_requests_list(
     
     try:
         query = text("""
-            SELECT 
-                tr.request_id, 
-                p.current_facility_id AS requesting_facility_id, 
-                tr.patient_id, 
-                p.blood_type_id, 
-                tr.units_required AS units_requested, 
-                tr.status, 
-                CASE 
-                    WHEN tr.urgency_level = 1 THEN '1 - Critical' 
-                    WHEN tr.urgency_level = 2 THEN '2 - Urgent' 
-                    WHEN tr.urgency_level = 3 THEN '3 - Moderate' 
-                    WHEN tr.urgency_level = 4 THEN '4 - Routine' 
-                    WHEN tr.urgency_level = 5 THEN '5 - Low' 
+            SELECT
+                tr.request_id,
+                tr.patient_id,
+                p.first_name || ' ' || p.last_name AS patient_name,
+                bt.type_group || bt.rh_factor AS blood_type,
+                f.facility_name,
+                p.current_facility_id AS requesting_facility_id,
+                tr.units_required AS units_requested,
+                tr.status,
+                CASE
+                    WHEN tr.urgency_level = 1 THEN '1 - Critical'
+                    WHEN tr.urgency_level = 2 THEN '2 - Urgent'
+                    WHEN tr.urgency_level = 3 THEN '3 - Moderate'
+                    WHEN tr.urgency_level = 4 THEN '4 - Routine'
+                    WHEN tr.urgency_level = 5 THEN '5 - Low'
                     ELSE TO_CHAR(tr.urgency_level)
-                END AS urgency_level, 
+                END AS urgency_level,
                 tr.request_date
             FROM transfusion_requests tr
             JOIN patients p ON tr.patient_id = p.patient_id
+            JOIN blood_types bt ON p.blood_type_id = bt.blood_type_id
+            JOIN facilities f ON p.current_facility_id = f.facility_id
             ORDER BY tr.request_date DESC
         """)
         
@@ -89,6 +93,30 @@ def create_request(
         db.rollback()
         logger.error(f"Failed to create request: {str(e)}")
         raise HTTPException(status_code=500, detail=f"Database error: {str(e)}")
+
+@router.get("/patients", response_model=List[Dict[str, Any]])
+def list_patients(
+    db: Session = Depends(get_db),
+    _: Any = Depends(get_current_user),
+):
+    try:
+        query = text("""
+            SELECT
+                p.patient_id,
+                p.first_name || ' ' || p.last_name AS full_name,
+                bt.type_group || bt.rh_factor AS blood_type,
+                f.facility_name
+            FROM patients p
+            JOIN blood_types bt ON p.blood_type_id = bt.blood_type_id
+            JOIN facilities f ON p.current_facility_id = f.facility_id
+            ORDER BY p.last_name, p.first_name
+        """)
+        result = db.execute(query).mappings().all()
+        return [{k.lower(): v for k, v in dict(row).items()} for row in result]
+    except Exception as e:
+        logger.error(f"Failed to fetch patients: {str(e)}")
+        raise HTTPException(status_code=500, detail="Error fetching patients list.")
+
 
 @router.post("/run-matching")
 def run_blood_matching(
