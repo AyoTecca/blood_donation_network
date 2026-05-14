@@ -27,10 +27,7 @@ export function Sidebar() {
           Logistics
         </NavLink>
         <NavLink to="/compatibility" className={({ isActive }) => (isActive ? "nav-link active" : "nav-link")}>
-          Compatibility
-        </NavLink>
-        <NavLink to="/provenance" className={({ isActive }) => (isActive ? "nav-link active" : "nav-link")}>
-          Provenance
+          Blood Lab
         </NavLink>
         {user?.role === "admin" && (
           <NavLink

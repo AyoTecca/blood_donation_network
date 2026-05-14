@@ -10,8 +10,7 @@ import { RequestsPage } from "./pages/RequestsPage";
 import { DashboardPage } from "./pages/DashboardPage";
 import { DispatchesPage } from "./pages/DispatchesPage";
 import { AuditPage } from "./pages/AuditPage";
-import { CompatibilityLab } from "./pages/CompatibilityLab";
-import { ProvenancePage } from "./pages/ProvenancePage";
+import { BloodLabPage } from "./pages/BloodLabPage";
 
 export default function App() {
   return (
@@ -36,8 +35,7 @@ export default function App() {
               />
               <Route path="/audit" element={<AuditPage />} />
               <Route path="/dashboard" element={<DashboardPage />} />
-              <Route path="/compatibility" element={<CompatibilityLab />} />
-              <Route path="/provenance" element={<ProvenancePage />} />
+              <Route path="/compatibility" element={<BloodLabPage />} />
               <Route path="dispatches" element={<DispatchesPage />} />
             </Route>
           </Route>
