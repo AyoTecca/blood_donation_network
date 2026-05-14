@@ -1,10 +1,9 @@
 import  { useEffect, useState } from "react";
-// ВАЖНО: Импортируем твой кастомный fetcher. 
-// Убедись, что путь '../api' правильный (если страница в src/pages/, то путь верный)
+
 import { apiFetch } from '../api'; 
 import '../style.css'; 
 
-// Статичные группы крови
+
 const STATIC_BLOOD_TYPES = [
   { id: 1, type: "O-" },
   { id: 4, type: "O+" },
@@ -30,13 +29,13 @@ export function CompatibilityLab() {
 
     setIsLoading(true);
     
-    // ВАЖНО: Убедись, что параметры (donor_id) совпадают с тем, что ждет FastAPI!
+  
     apiFetch(`/api/compatibility/check?donor_type_id=${donorId}&recipient_type_id=${recipientId}`)
       .then((data: any) => {
-        // Выводим ответ сервера в консоль браузера, чтобы точно знать, что там!
+        
         console.log("Backend response:", data);
 
-        // Если прилетела ошибка валидации (422) или другая
+       
         if (data.detail) {
           console.error("API Error:", data.detail);
           setIsCompatible(false);
@@ -44,10 +43,10 @@ export function CompatibilityLab() {
           return;
         }
 
-        // Ловим ВСЕ возможные варианты ключей, которые мог использовать бэкенд
+       
         const result = data.compatible_flag ?? data.compatible ?? data.is_compatible ?? data.result ?? false;
 
-        // Обрабатываем и boolean (true/false), и строки ('Y'/'N') от Oracle
+        
         if (result === 'Y' || result === true) {
           setIsCompatible(true);
         } else {
@@ -70,9 +69,7 @@ export function CompatibilityLab() {
           PL/SQL Powered
         </span>
       </div>
-      <p style={{ color: '#64748b', marginBottom: '30px' }}>
-        Interactive blood matching calculator. Select a donor and recipient to verify compatibility against the Oracle database rules.
-      </p>
+     
 
       <div className="dashboard-card" style={{ padding: '40px', maxWidth: '800px', margin: '0 auto', textAlign: 'center' }}>
         

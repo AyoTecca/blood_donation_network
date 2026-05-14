@@ -49,18 +49,18 @@ export function DashboardPage() {
     <div className="page-container">
       <div className="page-header">
         <h1>Analytics Dashboard</h1>
-        <p>Real-time network intelligence from Oracle views.</p>
+        
       </div>
 
       <div className="dashboard-grid">
-        {/* Карточка 1: Статус запросов */}
+        
         <div className="dashboard-card">
           <h3>Requests by Status</h3>
           <div className="stats-list">
             {data?.requests.map((stat, index) => (
               <div key={index} className="stat-item">
                 <span>{stat.status}</span>
-                {/* Используем правильное имя: request_count */}
+                
                 <strong>{stat.request_count}</strong>
               </div>
             ))}
@@ -86,12 +86,12 @@ export function DashboardPage() {
 
                 return (
                   <tr key={index}>
-                    {/* Используем правильные имена: status и unit_count */}
+                   
                     <td><strong>{inv.status}</strong></td>
                     <td>{inv.unit_count}</td>
                     <td>
                       <div className="progress-bar-bg">
-                        {/* eslint-disable-next-line react/forbid-dom-props */}
+                       
                         <div 
                           className="progress-bar-fill" 
                           style={{ width: `${fillPercentage}%` }}

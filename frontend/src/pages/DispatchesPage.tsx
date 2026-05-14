@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { TablePagination } from "../components/TablePagination";
 
 interface DispatchRecord {
   dispatch_id: number;
@@ -14,6 +15,8 @@ export function DispatchesPage() {
   const [dispatches, setDispatches] = useState<DispatchRecord[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
+  const [page, setPage] = useState(1);
+  const [pageSize, setPageSize] = useState(10);
 
   useEffect(() => {
     const fetchDispatches = async () => {
@@ -40,11 +43,14 @@ export function DispatchesPage() {
   if (loading) return <div className="page-container">Loading logistics map...</div>;
   if (error) return <div className="page-container message-box">{error}</div>;
 
+  const start = (page - 1) * pageSize;
+  const visibleDispatches = dispatches.slice(start, start + pageSize);
+
   return (
     <div className="page-container">
       <div className="page-header">
         <h1>Dispatch & Logistics</h1>
-        <p>Monitor blood units in transit across the network.</p>
+        
       </div>
 
       <div className="dashboard-card" style={{ marginTop: '20px' }}>
@@ -67,13 +73,13 @@ export function DispatchesPage() {
                 </td>
               </tr>
             ) : (
-              dispatches.map((d) => (
+              visibleDispatches.map((d) => (
                 <tr key={d.dispatch_id}>
                   <td><strong>#{d.dispatch_id}</strong></td>
                   <td>{d.destination_facility || "Unknown"}</td>
                   <td>{d.unit_id}</td>
                   <td>
-                    <span style={{ 
+                    <span style={{
                       color: d.urgency === 'Critical' ? 'red' : 'inherit',
                       fontWeight: d.urgency === 'Critical' ? 'bold' : 'normal'
                     }}>
@@ -91,6 +97,13 @@ export function DispatchesPage() {
             )}
           </tbody>
         </table>
+        <TablePagination
+          page={page}
+          pageSize={pageSize}
+          total={dispatches.length}
+          onPageChange={setPage}
+          onPageSizeChange={(size) => { setPageSize(size); setPage(1); }}
+        />
       </div>
     </div>
   );

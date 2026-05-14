@@ -34,9 +34,7 @@ export function ProvenancePage() {
   return (
     <div className="page-container">
       <h1>Donation Provenance 📦</h1>
-      <p style={{ color: '#64748b' }}>
-        Provenance audit: tracing the blood unit path back to the donor.
-      </p>
+      
 
       <div className="dashboard-card" style={{ marginTop: '20px', padding: '30px', textAlign: 'center' }}>
         <div style={{ display: 'flex', gap: '10px', justifyContent: 'center', marginBottom: '20px' }}>

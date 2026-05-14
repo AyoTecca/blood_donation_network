@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useAuth } from "../context/AuthContext";
+import { TablePagination } from "../components/TablePagination";
 
 interface TransfusionRequest {
   request_id: number;
@@ -18,6 +19,9 @@ export function RequestsPage() {
   const [loading, setLoading] = useState(true);
   const [matchingLoading, setMatchingLoading] = useState(false);
   const [message, setMessage] = useState<string | null>(null);
+
+  const [page, setPage] = useState(1);
+  const [pageSize, setPageSize] = useState(10);
 
   const [showAddForm, setShowAddForm] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -126,7 +130,7 @@ export function RequestsPage() {
       <div className="page-header" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
         <div>
           <h1>Transfusion Requests</h1>
-          <p>Manage and monitor clinical requests for blood units.</p>
+          
         </div>
         
        
@@ -223,43 +227,52 @@ export function RequestsPage() {
         {loading ? (
           <p>Loading requests...</p>
         ) : (
-          <table className="requests-table">
-            <thead>
-              <tr>
-                <th>ID</th>
-                <th>Date</th>
-                <th>Facility</th>
-                <th>Patient</th>
-                <th>Blood Type ID</th>
-                <th>Units</th>
-                <th>Urgency</th>
-                <th>Status</th>
-              </tr>
-            </thead>
-            <tbody>
-              {requests.map((req) => (
-                <tr key={req.request_id}>
-                  <td>#{req.request_id}</td>
-                  <td>{new Date(req.request_date).toLocaleDateString()}</td>
-                  <td>{req.requesting_facility_id}</td>
-                  <td>{req.patient_id}</td>
-                  <td>{req.blood_type_id}</td>
-                  <td>{req.units_requested}</td>
-                  <td>
-                    <span className={`urgency-badge ${req.urgency_level === 'Critical' ? 'urgency-critical' : 'urgency-normal'}`}>
-                      {req.urgency_level}
-                    </span>
-                  </td>
-                  <td>{req.status}</td>
-                </tr>
-              ))}
-              {requests.length === 0 && (
+          <>
+            <table className="requests-table">
+              <thead>
                 <tr>
-                  <td colSpan={8} className="text-center">No requests found.</td>
+                  <th>ID</th>
+                  <th>Date</th>
+                  <th>Facility</th>
+                  <th>Patient</th>
+                  <th>Blood Type ID</th>
+                  <th>Units</th>
+                  <th>Urgency</th>
+                  <th>Status</th>
                 </tr>
-              )}
-            </tbody>
-          </table>
+              </thead>
+              <tbody>
+                {requests.slice((page - 1) * pageSize, page * pageSize).map((req) => (
+                  <tr key={req.request_id}>
+                    <td>#{req.request_id}</td>
+                    <td>{new Date(req.request_date).toLocaleDateString()}</td>
+                    <td>{req.requesting_facility_id}</td>
+                    <td>{req.patient_id}</td>
+                    <td>{req.blood_type_id}</td>
+                    <td>{req.units_requested}</td>
+                    <td>
+                      <span className={`urgency-badge ${req.urgency_level === 'Critical' ? 'urgency-critical' : 'urgency-normal'}`}>
+                        {req.urgency_level}
+                      </span>
+                    </td>
+                    <td>{req.status}</td>
+                  </tr>
+                ))}
+                {requests.length === 0 && (
+                  <tr>
+                    <td colSpan={8} className="text-center">No requests found.</td>
+                  </tr>
+                )}
+              </tbody>
+            </table>
+            <TablePagination
+              page={page}
+              pageSize={pageSize}
+              total={requests.length}
+              onPageChange={setPage}
+              onPageSizeChange={(size) => { setPageSize(size); setPage(1); }}
+            />
+          </>
         )}
       </div>
     </div>
