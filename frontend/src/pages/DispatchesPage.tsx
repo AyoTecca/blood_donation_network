@@ -1,7 +1,8 @@
 import { useEffect, useRef, useState } from "react";
-import L from "leaflet";
-import "leaflet/dist/leaflet.css";
 import { TablePagination } from "../components/TablePagination";
+
+
+declare const L: any;
 
 interface DispatchRecord {
   dispatch_id: number;
@@ -24,26 +25,29 @@ interface MapPoint {
   active_dispatches: number;
 }
 
-// ── Raw-Leaflet map (no react-leaflet) ──────────────────────────────────────
+// ── Map component (pure Leaflet via CDN) ────────────────────────────────────
 function FacilityMap({ points }: { points: MapPoint[] }) {
   const containerRef = useRef<HTMLDivElement>(null);
-  const mapRef       = useRef<L.Map | null>(null);
+  const mapRef       = useRef<any>(null);
 
   useEffect(() => {
-    if (!containerRef.current || mapRef.current) return;
+    if (!containerRef.current || mapRef.current || typeof L === "undefined") return;
 
     const map = L.map(containerRef.current).setView([48.0, 66.9], 5);
     mapRef.current = map;
 
     L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
-      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+      attribution: "&copy; OpenStreetMap contributors",
     }).addTo(map);
 
     points.forEach((p) => {
       const color =
         p.active_dispatches > 0 ? "#2563eb" :
         p.active_requests   > 0 ? "#d97706" : "#94a3b8";
-      const radius = Math.max(6, Math.min(18, 6 + (p.active_requests + p.active_dispatches) * 1.5));
+
+      const radius = Math.max(6, Math.min(18,
+        6 + (p.active_requests + p.active_dispatches) * 1.5
+      ));
 
       L.circleMarker([p.latitude, p.longitude], {
         radius,
@@ -74,7 +78,7 @@ function FacilityMap({ points }: { points: MapPoint[] }) {
   return (
     <div
       ref={containerRef}
-      style={{ height: "460px", width: "100%", borderRadius: "10px", overflow: "hidden" }}
+      style={{ height: "460px", width: "100%" }}
     />
   );
 }
@@ -106,10 +110,12 @@ export function DispatchesPage() {
       .finally(() => setMapLoading(false));
   }, []);
 
-  if (loading) return <div className="page-container">Loading logistics map...</div>;
+  if (loading) return <div className="page-container">Loading logistics data...</div>;
   if (error)   return <div className="page-container message-box">{error}</div>;
 
-  const visibleDispatches = dispatches.slice((page - 1) * pageSize, page * pageSize);
+  const visibleDispatches = dispatches.slice(
+    (page - 1) * pageSize, page * pageSize
+  );
 
   return (
     <div className="page-container">
@@ -118,7 +124,7 @@ export function DispatchesPage() {
         <p>Monitor blood units in transit across the network.</p>
       </div>
 
-      {/* ── Table ── */}
+      {/* ── Dispatch table ── */}
       <div className="dashboard-card" style={{ marginTop: "20px" }}>
         <table className="stats-table">
           <thead>
@@ -171,7 +177,7 @@ export function DispatchesPage() {
           pageSize={pageSize}
           total={dispatches.length}
           onPageChange={setPage}
-          onPageSizeChange={(size) => { setPageSize(size); setPage(1); }}
+          onPageSizeChange={(s) => { setPageSize(s); setPage(1); }}
         />
       </div>
 
@@ -180,11 +186,10 @@ export function DispatchesPage() {
         <div style={{ marginBottom: "14px" }}>
           <h3 style={{ margin: "0 0 4px" }}>Facility Network Map</h3>
           <p style={{ margin: 0, fontSize: "13px", color: "#64748b" }}>
-            Each dot is a facility — size and colour reflect current activity.
+            Each dot is a facility. Size and colour reflect current activity load.
           </p>
         </div>
 
-        {/* Legend */}
         <div style={{ display: "flex", flexWrap: "wrap", gap: "20px", marginBottom: "14px", fontSize: "12px" }}>
           {[
             { color: "#2563eb", label: "Active dispatches (In Transit / Queued)" },
@@ -207,7 +212,9 @@ export function DispatchesPage() {
             Loading map data...
           </div>
         ) : (
-          <div style={{ border: "1px solid #e2e8f0", borderRadius: "10px", overflow: "hidden" }}>
+          <div style={{
+            border: "1px solid #e2e8f0", borderRadius: "10px", overflow: "hidden",
+          }}>
             <FacilityMap points={mapPoints} />
           </div>
         )}
