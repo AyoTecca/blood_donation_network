@@ -135,7 +135,7 @@ export function RequestsPage() {
       <div className="page-header" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
         <div>
           <h1>Transfusion Requests</h1>
-          <p>Manage and monitor clinical requests for blood units.</p>
+          
         </div>
         {user?.role === "admin" && (
           <button

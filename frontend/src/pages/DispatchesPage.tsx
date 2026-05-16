@@ -121,7 +121,7 @@ export function DispatchesPage() {
     <div className="page-container">
       <div className="page-header">
         <h1>Dispatch & Logistics</h1>
-        <p>Monitor blood units in transit across the network.</p>
+        
       </div>
 
       {/* ── Dispatch table ── */}

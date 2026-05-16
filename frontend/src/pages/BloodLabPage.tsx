@@ -558,10 +558,7 @@ export function BloodLabPage() {
     <div className="page-container">
       <div className="page-header">
         <h1>Blood Lab — PL/SQL Showcase</h1>
-        <p>
-          Interactive demos powered by Oracle PL/SQL packages, triggers, views, and collections.
-          Click <strong>▶ SQL</strong> under any section to see the database code behind it.
-        </p>
+        
       </div>
 
       <CompatibilitySection bloodTypes={bloodTypes} />

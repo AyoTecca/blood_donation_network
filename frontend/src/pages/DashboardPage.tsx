@@ -273,7 +273,7 @@ export function DashboardPage() {
     <div className="page-container">
       <div className="page-header" style={{ marginBottom: "24px" }}>
         <h1>Analytics Dashboard</h1>
-        <p>Real-time overview of the blood donation network.</p>
+        
       </div>
 
       {/* ── KPI Cards ── */}
