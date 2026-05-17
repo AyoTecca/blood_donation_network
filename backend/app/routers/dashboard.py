@@ -189,3 +189,76 @@ def expire_old_units(
     except Exception as e:
         db.rollback()
         raise HTTPException(status_code=500, detail=str(e))
+
+
+# ── Demo: restore Available inventory (admin only, before live matching demo) ─
+
+@router.post("/demo-restore-inventory")
+def demo_restore_inventory(
+    _: AppUser = Depends(require_admin),
+    db: Session = Depends(get_db),
+    unit_cap: int = Query(300, ge=50, le=500, description="Max Reserved units to release"),
+) -> dict[str, Any]:
+    """
+    Moves non-expired Reserved blood units back to Available so
+    pkg_blood_operations.process_blood_matches can run again for presentations.
+    """
+    try:
+        available_before = int(
+            db.execute(
+                text(
+                    """
+                    SELECT COUNT(*) FROM blood_units
+                    WHERE status = 'Available' AND expiry_date > TRUNC(SYSDATE)
+                    """
+                )
+            ).scalar_one()
+        )
+
+        result = db.execute(
+            text(
+                """
+                UPDATE blood_units
+                   SET status = 'Available'
+                 WHERE unit_id IN (
+                       SELECT unit_id FROM (
+                             SELECT bu.unit_id
+                               FROM blood_units bu
+                              WHERE bu.status = 'Reserved'
+                                AND bu.expiry_date > TRUNC(SYSDATE)
+                              ORDER BY bu.unit_id
+                              FETCH FIRST :cap ROWS ONLY
+                       )
+                 )
+                """
+            ),
+            {"cap": unit_cap},
+        )
+        restored = int(result.rowcount)
+
+        available_after = int(
+            db.execute(
+                text(
+                    """
+                    SELECT COUNT(*) FROM blood_units
+                    WHERE status = 'Available' AND expiry_date > TRUNC(SYSDATE)
+                    """
+                )
+            ).scalar_one()
+        )
+        db.commit()
+
+        return {
+            "status": "success",
+            "units_restored": restored,
+            "available_before": available_before,
+            "available_after": available_after,
+            "message": (
+                f"Demo inventory restored. {restored} unit(s) moved Reserved → Available. "
+                f"Available now: {available_after}. "
+                "Go to Requests → Run Auto-Matching Algorithm."
+            ),
+        }
+    except Exception as e:
+        db.rollback()
+        raise HTTPException(status_code=500, detail=str(e)) from e

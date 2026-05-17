@@ -202,6 +202,8 @@ export function DashboardPage() {
   // Expire units state
   const [expireLoading, setExpireLoading] = useState(false);
   const [expireMsg,     setExpireMsg]     = useState<string | null>(null);
+  const [restoreLoading, setRestoreLoading] = useState(false);
+  const [restoreMsg, setRestoreMsg] = useState<string | null>(null);
 
   // Pagination — Open Requests
   const [openPage,     setOpenPage]     = useState(1);
@@ -261,6 +263,23 @@ export function DashboardPage() {
       setExpireMsg(`❌ ${e.message}`);
     } finally {
       setExpireLoading(false);
+    }
+  };
+
+  const handleDemoRestore = async () => {
+    setRestoreLoading(true);
+    setRestoreMsg(null);
+    try {
+      const r = await apiFetch<any>("/api/dashboard/demo-restore-inventory", { method: "POST" });
+      setRestoreMsg(`✅ ${r.message}`);
+      const inv = await apiFetch<InventoryStat[]>("/api/dashboard/inventory-by-status");
+      setInventory(inv);
+      const k = await apiFetch<KPI>("/api/dashboard/kpi");
+      setKpi(k);
+    } catch (e: any) {
+      setRestoreMsg(`❌ ${e.message}`);
+    } finally {
+      setRestoreLoading(false);
     }
   };
 
@@ -408,6 +427,38 @@ export function DashboardPage() {
                 </div>
               )}
             </div>
+          </div>
+
+          {/* Demo inventory restore */}
+          <div style={{ background: "#f0fdf4", borderRadius: "10px", padding: "16px", marginBottom: "16px", border: "1px solid #bbf7d0" }}>
+            <h4 style={{ margin: "0 0 4px", fontSize: "14px" }}>Demo: Restore Matching Inventory</h4>
+            <p style={{ margin: "0 0 12px", fontSize: "12px", color: "#64748b" }}>
+              After testing auto-matching, all units may show as <strong>Reserved</strong> and{" "}
+              <strong>Available = 0</strong>. This moves up to 300 non-expired Reserved units back to{" "}
+              <strong>Available</strong> so <code>process_blood_matches</code> can run again for your presentation.
+            </p>
+            {user?.role === "admin" ? (
+              <>
+                <button
+                  type="button"
+                  onClick={handleDemoRestore}
+                  disabled={restoreLoading}
+                  style={{
+                    padding: "9px 16px", background: "#16a34a", color: "#fff",
+                    border: "none", borderRadius: "6px", cursor: "pointer", fontWeight: 600, fontSize: "13px",
+                  }}
+                >
+                  {restoreLoading ? "Restoring..." : "Restore Demo Inventory"}
+                </button>
+                {restoreMsg && (
+                  <p style={{ marginTop: "10px", fontSize: "13px", color: restoreMsg.startsWith("✅") ? "#16a34a" : "#dc2626" }}>
+                    {restoreMsg}
+                  </p>
+                )}
+              </>
+            ) : (
+              <p style={{ fontSize: "12px", color: "#64748b", margin: 0 }}>Admin only.</p>
+            )}
           </div>
 
           {/* Expire Old Units */}

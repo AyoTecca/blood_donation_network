@@ -499,6 +499,13 @@ def main() -> int:
         if isinstance(audit_data, list):
             audit_before = len(audit_data)
 
+        run(
+            "Demo restore",
+            "Restore demo inventory (admin)",
+            "POST",
+            "/api/dashboard/demo-restore-inventory",
+        )
+
         if patient_id:
             run(
                 "§5 trg_transfusion_requests_history/notify",
