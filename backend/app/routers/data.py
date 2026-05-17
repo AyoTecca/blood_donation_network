@@ -150,8 +150,8 @@ def open_requests(
     return PagedOpenRequests(items=items, total=total, page=page, page_size=page_size)
 
 
-@router.get("/compatibility/check")
-def compatibility_check(
+@router.get("/plsql/compatibility/check")
+def compatibility_check_plsql(
     donor_type_id: int,
     recipient_type_id: int,
     _: AppUser = Depends(get_current_user),
