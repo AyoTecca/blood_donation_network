@@ -69,7 +69,9 @@ def kpi_summary(
             (SELECT COUNT(*) FROM transfusion_requests WHERE status = 'Completed') AS completed_requests,
             (SELECT COUNT(*) FROM match_dispatches WHERE status = 'In Transit')    AS in_transit,
             (SELECT COUNT(*) FROM patients)                                        AS total_patients,
-            (SELECT COUNT(*) FROM donors)                                          AS total_donors
+            (SELECT COUNT(*) FROM donors)                                          AS total_donors,
+            (SELECT COUNT(*) FROM app_notifications)                               AS notification_total,
+            (SELECT COUNT(*) FROM app_notifications WHERE is_read = 'N')           AS notification_unread
         FROM DUAL
     """)).mappings().one()
     return _lower(dict(row))
@@ -200,10 +202,21 @@ def demo_restore_inventory(
     unit_cap: int = Query(300, ge=50, le=500, description="Max Reserved units to release"),
 ) -> dict[str, Any]:
     """
-    Moves non-expired Reserved blood units back to Available so
-    pkg_blood_operations.process_blood_matches can run again for presentations.
+    Prepares a repeatable live demo:
+    - moves non-expired Reserved blood units back to Available
+    - creates a few Pending requests if the open queue is empty
     """
     try:
+        open_before = int(
+            db.execute(
+                text(
+                    """
+                    SELECT COUNT(*) FROM transfusion_requests
+                    WHERE status IN ('Pending', 'Partially Fulfilled')
+                    """
+                )
+            ).scalar_one()
+        )
         available_before = int(
             db.execute(
                 text(
@@ -236,6 +249,68 @@ def demo_restore_inventory(
         )
         restored = int(result.rowcount)
 
+        created_requests = 0
+        if open_before == 0:
+            patient_rows = db.execute(
+                text(
+                    """
+                    SELECT patient_id
+                    FROM (
+                        SELECT p.patient_id
+                        FROM patients p
+                        JOIN blood_types bt ON bt.blood_type_id = p.blood_type_id
+                        WHERE bt.type_group = 'AB' AND bt.rh_factor = '+'
+                        ORDER BY p.patient_id
+                    )
+                    WHERE ROWNUM <= 5
+                    """
+                )
+            ).mappings().all()
+
+            if not patient_rows:
+                patient_rows = db.execute(
+                    text(
+                        """
+                        SELECT patient_id
+                        FROM (
+                            SELECT patient_id
+                            FROM patients
+                            ORDER BY patient_id
+                        )
+                        WHERE ROWNUM <= 5
+                        """
+                    )
+                ).mappings().all()
+
+            for index, row in enumerate(patient_rows, start=1):
+                patient_id = row.get("patient_id") or row.get("PATIENT_ID")
+                if patient_id is None:
+                    continue
+
+                db.execute(
+                    text(
+                        """
+                        INSERT INTO transfusion_requests (
+                            request_id, patient_id, urgency_level,
+                            units_required, request_date, status
+                        )
+                        VALUES (
+                            (SELECT NVL(MAX(request_id), 0) + 1 FROM transfusion_requests),
+                            :patient_id,
+                            :urgency_level,
+                            1,
+                            TRUNC(SYSDATE),
+                            'Pending'
+                        )
+                        """
+                    ),
+                    {
+                        "patient_id": patient_id,
+                        "urgency_level": min(index, 5),
+                    },
+                )
+                created_requests += 1
+
         available_after = int(
             db.execute(
                 text(
@@ -251,10 +326,12 @@ def demo_restore_inventory(
         return {
             "status": "success",
             "units_restored": restored,
+            "requests_created": created_requests,
             "available_before": available_before,
             "available_after": available_after,
             "message": (
                 f"Demo inventory restored. {restored} unit(s) moved Reserved → Available. "
+                f"Created {created_requests} Pending demo request(s). "
                 f"Available now: {available_after}. "
                 "Go to Requests → Run Auto-Matching Algorithm."
             ),

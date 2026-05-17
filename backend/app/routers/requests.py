@@ -118,6 +118,24 @@ def list_patients(
         raise HTTPException(status_code=500, detail="Error fetching patients list.")
 
 
+def _matching_snapshot(db: Session) -> dict[str, int]:
+    row = db.execute(
+        text(
+            """
+            SELECT
+                (SELECT COUNT(*) FROM transfusion_requests
+                  WHERE status IN ('Pending', 'Partially Fulfilled')) AS open_requests,
+                (SELECT COUNT(*) FROM blood_units
+                  WHERE status = 'Available' AND expiry_date > TRUNC(SYSDATE)) AS available_units,
+                (SELECT COUNT(*) FROM blood_units
+                  WHERE status = 'Reserved' AND expiry_date > TRUNC(SYSDATE)) AS reserved_units
+            FROM DUAL
+            """
+        )
+    ).mappings().one()
+    return {k: int(row[k]) for k in row.keys()}
+
+
 @router.post("/run-matching")
 def run_blood_matching(
     db: Session = Depends(get_db),
@@ -132,13 +150,43 @@ def run_blood_matching(
     logger.info(f"Admin {user_email} initiated the blood matching process.")
     
     try:
+        before = _matching_snapshot(db)
         db.execute(text("BEGIN pkg_blood_operations.process_blood_matches; END;"))
         db.commit()
-        
+        after = _matching_snapshot(db)
+
+        open_delta = after["open_requests"] - before["open_requests"]
+        avail_delta = after["available_units"] - before["available_units"]
+        reserved_delta = after["reserved_units"] - before["reserved_units"]
+
+        if before["open_requests"] == 0:
+            hint = (
+                " No open requests (Pending / Partially Fulfilled). "
+                "On Dashboard, click Prepare Demo for Matching, then run again."
+            )
+        elif avail_delta == 0 and reserved_delta == 0:
+            hint = (
+                " Matching ran but inventory did not change — likely no compatible "
+                "Available units for open requests."
+            )
+        else:
+            hint = ""
+
         logger.info("Blood matching PL/SQL procedure executed successfully.")
         return {
-            "status": "success", 
-            "message": "Blood matching algorithm executed successfully in the database."
+            "status": "success",
+            "open_requests_before": before["open_requests"],
+            "open_requests_after": after["open_requests"],
+            "available_before": before["available_units"],
+            "available_after": after["available_units"],
+            "reserved_before": before["reserved_units"],
+            "reserved_after": after["reserved_units"],
+            "message": (
+                f"Matching finished. Open requests: {before['open_requests']} → {after['open_requests']} "
+                f"({open_delta:+d}). Available units: {before['available_units']} → {after['available_units']} "
+                f"({avail_delta:+d}). Reserved: {before['reserved_units']} → {after['reserved_units']} "
+                f"({reserved_delta:+d}).{hint}"
+            ),
         }
         
     except Exception as e:

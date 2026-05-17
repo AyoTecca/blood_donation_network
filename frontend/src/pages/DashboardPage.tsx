@@ -15,6 +15,13 @@ interface KPI {
   in_transit: number;
   total_patients: number;
   total_donors: number;
+  notification_total?: number;
+  notification_unread?: number;
+}
+
+function formatNotifTime(created_at: string): string {
+  const d = new Date(created_at);
+  return Number.isNaN(d.getTime()) ? String(created_at) : d.toLocaleString();
 }
 
 interface InventoryStat { status: string; unit_count: number; }
@@ -222,7 +229,7 @@ export function DashboardPage() {
           apiFetch<RequestStat[]>("/api/dashboard/requests-by-status"),
           apiFetch<DispatchStat[]>("/api/dashboard/dispatch-performance"),
           apiFetch<OpenRequest[]>("/api/dashboard/open-by-facility"),
-          apiFetch<Notification[]>("/api/dashboard/notifications"),
+          apiFetch<Notification[]>("/api/dashboard/notifications?limit=50"),
           apiFetch<Facility[]>("/api/dashboard/facilities"),
         ]);
         setKpi(k); setInventory(inv); setRequests(req);
@@ -292,7 +299,10 @@ export function DashboardPage() {
     <div className="page-container">
       <div className="page-header" style={{ marginBottom: "24px" }}>
         <h1>Analytics Dashboard</h1>
-        
+        <p style={{ margin: "8px 0 0", fontSize: "14px", color: "#64748b", maxWidth: "720px" }}>
+          Staff alerts: scroll to <a href="#notifications-feed" style={{ color: "#b91c1c", fontWeight: 600 }}>Notifications Feed</a> (right below KPI cards).
+          Filled by trigger <code>trg_transfusion_requests_notify</code> on request create/status change.
+        </p>
       </div>
 
       {/* ── KPI Cards ── */}
@@ -303,9 +313,54 @@ export function DashboardPage() {
         <KpiCard label="Pending Requests"   value={kpi?.pending_requests  ?? 0} color="#d97706" />
         <KpiCard label="Partial Requests"   value={kpi?.partial_requests  ?? 0} color="#0891b2" />
         <KpiCard label="In Transit"         value={kpi?.in_transit        ?? 0} color="#7c3aed" />
+        <KpiCard
+          label="Notifications (unread)"
+          value={kpi?.notification_unread ?? 0}
+          color="#c2410c"
+        />
         <KpiCard label="Total Patients"     value={kpi?.total_patients    ?? 0} color="#475569" />
         <KpiCard label="Total Donors"       value={kpi?.total_donors      ?? 0} color="#475569" />
       </div>
+
+      <section id="notifications-feed" style={{ marginBottom: "28px" }}>
+        <Section title="Notifications Feed" badge="vw_notifications_feed · trg_transfusion_requests_notify">
+          <p style={{ fontSize: "13px", color: "#64748b", margin: "0 0 12px" }}>
+            In-app staff alerts (not browser push). Rows appear when requests are created or statuses change.
+            Database total: {kpi?.notification_total ?? "—"} · showing latest {notifs.length} (max 50).
+          </p>
+          <SimpleTable
+            cols={["Req #", "Event", "Message", "Facility", "Read", "Time"]}
+            rows={notifs
+              .slice((notifPage - 1) * notifPageSize, notifPage * notifPageSize)
+              .map(n => [
+                `#${n.request_id ?? "—"}`,
+                <span style={{ fontSize: "11px", fontWeight: 600, background: "#f1f5f9", padding: "2px 6px", borderRadius: "6px" }}>
+                  {n.event_type}
+                </span>,
+                n.message_text,
+                n.facility_name ?? "—",
+                n.is_read === "Y"
+                  ? <span style={{ color: "#16a34a", fontSize: "12px" }}>Read</span>
+                  : <span style={{ color: "#d97706", fontSize: "12px" }}>New</span>,
+                formatNotifTime(String(n.created_at)),
+              ])}
+          />
+          {notifs.length === 0 && (
+            <p style={{ fontSize: "13px", color: "#94a3b8", marginTop: "8px" }}>
+              Empty feed — create a request on the Requests page or run auto-matching to fire the notify trigger.
+            </p>
+          )}
+          {notifs.length > 0 && (
+            <TablePagination
+              page={notifPage}
+              pageSize={notifPageSize}
+              total={notifs.length}
+              onPageChange={setNotifPage}
+              onPageSizeChange={(s) => { setNotifPageSize(s); setNotifPage(1); }}
+            />
+          )}
+        </Section>
+      </section>
 
       {/* ── Two column: Inventory + Requests ── */}
       <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "20px", marginBottom: "24px" }}>
@@ -433,9 +488,10 @@ export function DashboardPage() {
           <div style={{ background: "#f0fdf4", borderRadius: "10px", padding: "16px", marginBottom: "16px", border: "1px solid #bbf7d0" }}>
             <h4 style={{ margin: "0 0 4px", fontSize: "14px" }}>Demo: Restore Matching Inventory</h4>
             <p style={{ margin: "0 0 12px", fontSize: "12px", color: "#64748b" }}>
-              After testing auto-matching, all units may show as <strong>Reserved</strong> and{" "}
-              <strong>Available = 0</strong>. This moves up to 300 non-expired Reserved units back to{" "}
-              <strong>Available</strong> so <code>process_blood_matches</code> can run again for your presentation.
+              Prepares the demo by moving up to 300 non-expired Reserved units back to{" "}
+              <strong>Available</strong>. If there are no Pending/Partially Fulfilled requests, it also
+              creates a few fresh <strong>Pending</strong> requests so{" "}
+              <code>process_blood_matches</code> has visible work to process.
             </p>
             {user?.role === "admin" ? (
               <>
@@ -448,7 +504,7 @@ export function DashboardPage() {
                     border: "none", borderRadius: "6px", cursor: "pointer", fontWeight: 600, fontSize: "13px",
                   }}
                 >
-                  {restoreLoading ? "Restoring..." : "Restore Demo Inventory"}
+                  {restoreLoading ? "Preparing..." : "Prepare Auto-Matching Demo"}
                 </button>
                 {restoreMsg && (
                   <p style={{ marginTop: "10px", fontSize: "13px", color: restoreMsg.startsWith("✅") ? "#16a34a" : "#dc2626" }}>
@@ -541,40 +597,6 @@ export function DashboardPage() {
         />
       </Section>
 
-      {/* ── Notifications Feed ── */}
-      <Section title="Notifications Feed" badge="vw_notifications_feed · trg_transfusion_requests_notify">
-        <SimpleTable
-          cols={["#", "Event", "Message", "Facility", "Read", "Time"]}
-          rows={notifs
-            .slice((notifPage - 1) * notifPageSize, notifPage * notifPageSize)
-            .map(n => [
-              `#${n.request_id ?? "—"}`,
-              <span style={{ fontSize: "11px", fontWeight: 600, background: "#f1f5f9", padding: "2px 6px", borderRadius: "6px" }}>
-                {n.event_type}
-              </span>,
-              n.message_text,
-              n.facility_name ?? "—",
-              n.is_read === "Y"
-                ? <span style={{ color: "#16a34a", fontSize: "12px" }}>✓ Read</span>
-                : <span style={{ color: "#d97706", fontSize: "12px" }}>● New</span>,
-              new Date(n.created_at).toLocaleString(),
-            ])}
-        />
-        {notifs.length === 0 && (
-          <p style={{ fontSize: "13px", color: "#94a3b8", marginTop: "8px" }}>
-            No notifications yet — they appear automatically when requests are created or updated (trigger: <code>trg_transfusion_requests_notify</code>).
-          </p>
-        )}
-        {notifs.length > 0 && (
-          <TablePagination
-            page={notifPage}
-            pageSize={notifPageSize}
-            total={notifs.length}
-            onPageChange={setNotifPage}
-            onPageSizeChange={(s) => { setNotifPageSize(s); setNotifPage(1); }}
-          />
-        )}
-      </Section>
     </div>
   );
 }
